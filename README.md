@@ -34,16 +34,6 @@
 [![Spotify](https://git-activity-git-master.darkpandawarrior.vercel.app/api/spotify)](https://open.spotify.com/user/31sl3ad37ctw7wbwvhbgvawiozme)
 
 
-<details>
-  <summary>:zap: Recent Github Activity</summary>
-  
-<!--START_SECTION:activity-->
-
-<!--END_SECTION:activity-->
-
-</details>
-
-
 ### Connect with me on:
 
 <p align="left">
