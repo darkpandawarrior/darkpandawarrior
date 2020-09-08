@@ -1,4 +1,4 @@
-<h1 align="left">Hola Amigos, My name is Siddharth</h1>
+<h1 align="left">Hola Amigos, I'm Sid!</h1>
 <h3 align="left">A curious programming enthusiast from India, wishing to get his hands dirty with various languages,frameworks,tools and new concepts.</h3>
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
