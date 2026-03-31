@@ -6,7 +6,7 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=darkpandawarrior" alt="darkpandawarrior" /> </p>
 
-- 👨‍💻 Currently Working As: [Android Dev at Jugnoo](https://www.jugnoo.in/)
+- 👨‍💻 Currently Working As: [Android Dev at Dice](https://dice.tech/)
 
 - 🌱 Currently Learning: **Android, Java, Kotlin**
 
