@@ -1,62 +1,54 @@
-<h1 align="left">Greetings, I'm Sid!</h1>
-<h3 align="left">A curious programming enthusiast from India, wishing to get his hands dirty with various languages, frameworks, tools and new concepts.</h3>
+# Hi, I'm Siddharth Pandalai 👋
 
-[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
-[![Instagram Follow](https://img.shields.io/badge/instagram-%23E4405F.svg?&style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/darkpandawarrior)
+**Senior Android Engineer** — 5+ years building Android apps at scale. Currently SDE-2 & Android Platform Owner at [Dice.tech](https://dice.tech/), where I own a platform serving **50,000+ MAU**.
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=darkpandawarrior" alt="darkpandawarrior" /> </p>
+🌐 Portfolio: **[darkpandawarrior.github.io](https://darkpandawarrior.github.io)**
 
-- 👨‍💻 Currently Working As: [Android Dev at Dice](https://dice.tech/)
+```kotlin
+val siddharth = AndroidEngineer(
+    location = "Pune, India",
+    yearsOfExperience = 5, // and counting
+    currentFocus = listOf("Compose Multiplatform", "Performance Engineering", "System Design"),
+)
+```
 
-- 🌱 Currently Learning: **Android, Java, Kotlin**
+## What I've shipped
 
-- 👯 Looking to collaborate with: **Other Content Creators and learn through group projects.**
+- 📍 **Location engineering** — predictive dead reckoning + sensor fusion (accelerometer + GPS), taking tracking accuracy from **50% → 95%** in production
+- 🎨 **92% Jetpack Compose migration** of a 738k+ LOC codebase, including a custom theme engine that cut UI development friction by **60%**
+- 🛡️ **80% crash reduction** through systematic Crashlytics/Sentry triage, threading fixes, and architecture cleanup
+- 🔐 **Security hardening** — SQLCipher + Android Keystore, SSL pinning, biometric auth (VAPT-compliant)
+- 🏢 **20+ white-label client apps** at Jugnoo/Jungleworks with an **80% reduction** in delivery time via build automation
 
-- 🤝 Looking for help with: **Getting started on Open Source Projects & Contributions.**
+## Tech stack
 
-- 🖊 Personal Blog: [booksbeforebros.wordpress.com](booksbeforebros.wordpress.com)
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Coroutines](https://img.shields.io/badge/Coroutines%20%2B%20Flow-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
+![Hilt](https://img.shields.io/badge/Hilt-2196F3?style=for-the-badge&logo=google&logoColor=white)
+![Room](https://img.shields.io/badge/Room%20%2B%20SQLCipher-FF6F00?style=for-the-badge&logo=sqlite&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white)
+![Fastlane](https://img.shields.io/badge/Fastlane%20CI%2FCD-00F200?style=for-the-badge&logo=fastlane&logoColor=black)
 
-- 💬 Ask Me: **To help or be a part of any project. Wish to learn through contributing!**
+**Architecture:** MVVM + Clean Architecture · MVI state · Repository pattern · Multi-module
+**Also:** WorkManager · Foreground Services · Retrofit/OkHttp · Sentry · Agentic dev workflows (MCP)
 
-- 📫 Email: **siddharthpandalai990@gmail.com**
-
-- ⚡ Fun Fact: **Avid reader and otaku with a penchant for writing and racking my brains over Chess, Puns & Coffee.**
-
-### Languages & Tools
-
-<p align="left">
-  <img src="https://www.vectorlogo.zone/logos/android/android-icon.svg" alt="android" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" alt="aws" width="40" height="40"/> 
-  <img src="https://cdn.worldvectorlogo.com/logos/c.svg" alt="cplusplus" width="40" height="40"/>
-  <img src="https://www.vectorlogo.zone/logos/netlifyapp_watercss/netlifyapp_watercss-ar21.svg" alt="css3" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" alt="dart" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" alt="django" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" alt="flutter" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/golang/golang-icon.svg" alt="go" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="html5" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/java/java-icon.svg" alt="java" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="40" height="40"/>
-  <img src="https://www.vectorlogo.zone/logos/linux/linux-icon.svg" alt="linux" width="40" height="40"/>  
-  <img src="https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg" alt="mysql" width="40" height="40"/> 
-  <img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="python" width="40" height="40"/></p>
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&hide=html" alt="darkpandawarrior" /></p>
-
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=darkpandawarrior&show_icons=true" alt="darkpandawarrior" /></p>
-
-### Spotify Playing 🎧
-[![Spotify](https://git-activity-git-master.darkpandawarrior.vercel.app/api/spotify)](https://open.spotify.com/user/31sl3ad37ctw7wbwvhbgvawiozme)
-
-
-### You can connect with me on:
+## GitHub stats
 
 <p align="left">
-<a href="https://linkedin.com/in/siddharth-pandalai-3712b215a" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg" alt="siddharth-pandalai-3712b215a" height="30" width="30" /></a>
-<a href="https://stackoverflow.com/users/12678663/siddharth-pandalai" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg" alt="siddharth-pandalai" height="30" width="30" /></a>
-<a href="https://instagram.com/darkpandawarrior" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg" alt="darkpandawarrior" height="30" width="30" /></a>
-<a href="https://medium.com/@siddharthpandalai990" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/medium.svg" alt="@siddharthpandalai990" height="30" width="30" /></a>
-<a href="https://www.hackerrank.com/darkpandawarrior" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/hackerrank.svg" alt="darkpandawarrior" height="30" width="30" /></a>
-<a href="https://www.leetcode.com/siddharthpandalai990" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/leetcode.svg" alt="siddharthpandalai990" height="30" width="30" /></a>
-<a href="https://auth.geeksforgeeks.org/user/siddharthpandalai/profile" target="blank"><img align="left" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/geeksforgeeks.svg" alt="siddharthpandalai" height="30" width="30" /></a>
+  <img src="https://github-readme-stats.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,jupyter%20notebook" alt="Top languages" height="165" />
 </p>
+
+## Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:siddharthpandalai990@gmail.com)
+[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@siddharthpandalai990)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/12678663/siddharth-pandalai)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/siddharthpandalai990)
+
+---
+
+⚡ *Avid reader, chess player, and connoisseur of puns & coffee.*
