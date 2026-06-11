@@ -41,6 +41,11 @@ val siddharth = AndroidEngineer(
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
 </p>
 
+## Recent activity
+
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
 ## Connect
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
