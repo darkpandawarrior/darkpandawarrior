@@ -16,9 +16,21 @@ val siddharth = AndroidEngineer(
 
 - 📍 **Location engineering** — predictive dead reckoning + sensor fusion (accelerometer + GPS), taking tracking accuracy from **50% → 95%** in production
 - 🎨 **92% Jetpack Compose migration** of a 738k+ LOC codebase, including a custom theme engine that cut UI development friction by **60%**
-- 🛡️ **80% crash reduction** through systematic Crashlytics/Sentry triage, threading fixes, and architecture cleanup
-- 🔐 **Security hardening** — SQLCipher + Android Keystore, SSL pinning, biometric auth (VAPT-compliant)
+- 🛡️ **80% crash reduction** — dual monitoring with Firebase Crashlytics + Sentry (programmatic init, ProGuard mapping, ANR detection), threading fixes, structured-concurrency cleanup
+- 🔐 **Security hardening** — SQLCipher + Android Keystore, SSL pinning as dual build flavors (pinned/unpinned), biometric auth (VAPT/banking-compliant)
+- ✈️ **Trip V2 travel platform** — mileage submission linked to Itinerary V2, GIN screens, approval flows, full Mixpanel analytics across the mileage ecosystem
 - 🏢 **20+ white-label client apps** at Jugnoo/Jungleworks with an **80% reduction** in delivery time via build automation
+
+## Open source — Mileway
+
+> Offline-first mileage, travel & expense tracker — **Kotlin Multiplatform, iOS + Android + Wear OS**
+
+- **23-module clean architecture**: feature modules never touch each other, meet only at `:app`, wired with Koin
+- **V19 milestone**: iOS fully live — kmpworkmanager (BGTask dispatcher + AppDelegate), all screens in `commonMain`
+- **96 Roborazzi screenshot tests** on the JVM (no emulator, no network), detekt / ktlint / Kover, CI
+- Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid)
+
+[![View on GitHub](https://img.shields.io/badge/MileTrackerDemo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/darkpandawarrior/MileTrackerDemo)
 
 ## Tech stack
 
