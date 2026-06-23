@@ -56,9 +56,9 @@ val siddharth = AndroidEngineer(
 ## Recent activity
 
 <!--START_SECTION:activity-->
-1. 💪 Opened PR [#1148](https://github.com/santifer/career-ops/pull/1148) in [santifer/career-ops](https://github.com/santifer/career-ops)
-2. 💪 Opened PR [#1141](https://github.com/santifer/career-ops/pull/1141) in [santifer/career-ops](https://github.com/santifer/career-ops)
-3. 🗣 Commented on [#913](https://github.com/santifer/career-ops/pull/913#issuecomment-4677746026) in [santifer/career-ops](https://github.com/santifer/career-ops)
+1. 💪 Opened PR [#1186](https://github.com/santifer/career-ops/pull/1186) in [santifer/career-ops](https://github.com/santifer/career-ops)
+2. 💪 Opened PR [#1185](https://github.com/santifer/career-ops/pull/1185) in [santifer/career-ops](https://github.com/santifer/career-ops)
+3. 💪 Opened PR [#1148](https://github.com/santifer/career-ops/pull/1148) in [santifer/career-ops](https://github.com/santifer/career-ops)
 <!--END_SECTION:activity-->
 
 ## Connect
