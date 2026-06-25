@@ -18,5 +18,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           MAX_LINES: 6
+          IGNORED_REPOS: santifer/career-ops
           COMMIT_NAME: Siddharth Pandalai
           COMMIT_MSG: "chore: update recent activity"
+
