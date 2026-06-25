@@ -84,6 +84,12 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 ## Recent activity
 
 <!--START_SECTION:activity-->
+1. ❌ Closed PR [#7](https://github.com/darkpandawarrior/Kursi/pull/7) in [darkpandawarrior/Kursi](https://github.com/darkpandawarrior/Kursi)
+2. ❌ Closed PR [#3](https://github.com/darkpandawarrior/Kursi/pull/3) in [darkpandawarrior/Kursi](https://github.com/darkpandawarrior/Kursi)
+3. 🎉 Merged PR [#1186](https://github.com/santifer/career-ops/pull/1186) in [santifer/career-ops](https://github.com/santifer/career-ops)
+4. 💪 Opened PR [#1186](https://github.com/santifer/career-ops/pull/1186) in [santifer/career-ops](https://github.com/santifer/career-ops)
+5. 💪 Opened PR [#1185](https://github.com/santifer/career-ops/pull/1185) in [santifer/career-ops](https://github.com/santifer/career-ops)
+6. 💪 Opened PR [#1148](https://github.com/santifer/career-ops/pull/1148) in [santifer/career-ops](https://github.com/santifer/career-ops)
 <!--END_SECTION:activity-->
 
 ## Connect
