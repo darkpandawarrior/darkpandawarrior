@@ -81,16 +81,9 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
 </p>
 
-## Recent activity
-
-<!--START_SECTION:activity-->
-1. ❌ Closed PR [#7](https://github.com/darkpandawarrior/Kursi/pull/7) in [darkpandawarrior/Kursi](https://github.com/darkpandawarrior/Kursi)
-2. ❌ Closed PR [#3](https://github.com/darkpandawarrior/Kursi/pull/3) in [darkpandawarrior/Kursi](https://github.com/darkpandawarrior/Kursi)
-3. 🎉 Merged PR [#1186](https://github.com/santifer/career-ops/pull/1186) in [santifer/career-ops](https://github.com/santifer/career-ops)
-4. 💪 Opened PR [#1186](https://github.com/santifer/career-ops/pull/1186) in [santifer/career-ops](https://github.com/santifer/career-ops)
-5. 💪 Opened PR [#1185](https://github.com/santifer/career-ops/pull/1185) in [santifer/career-ops](https://github.com/santifer/career-ops)
-6. 💪 Opened PR [#1148](https://github.com/santifer/career-ops/pull/1148) in [santifer/career-ops](https://github.com/santifer/career-ops)
-<!--END_SECTION:activity-->
+<p align="left">
+  <img src="https://streak-stats.demolab.com?user=darkpandawarrior&theme=tokyonight&hide_border=true" alt="GitHub streak" height="165" />
+</p>
 
 ## Connect
 
