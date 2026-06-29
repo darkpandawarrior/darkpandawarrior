@@ -58,7 +58,11 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 | Project | What it is |
 |---------|-----------|
 | [**cv-siddharth**](https://github.com/darkpandawarrior/cv-siddharth) &nbsp;[![Live](https://img.shields.io/badge/Live↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app) | Interactive CV with AI assistant — React 19, multi-provider LLM chat, 3D hero, printable résumé |
-| [**career-ops**](https://github.com/darkpandawarrior/career-ops) | AI-powered job search system built on Claude Code — 14 skill modes, Go dashboard, PDF generation |
+| [**HireSignal**](https://github.com/darkpandawarrior/career-ops) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery (23 providers), evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on open-source career-ops |
+
+### Open-source contributions
+
+- **[HireSignal](https://github.com/kirklazar-android/hiresignal)** (career-ops) — **4 merged PRs**: [career-ops 1.14 System-Layer sync](https://github.com/kirklazar-android/hiresignal/pull/8), [production-grade README](https://github.com/kirklazar-android/hiresignal/pull/7), [multi-profile switcher](https://github.com/kirklazar-android/hiresignal/pull/5), [dashboard tabs](https://github.com/kirklazar-android/hiresignal/pull/4)
 
 ## Tech stack
 
