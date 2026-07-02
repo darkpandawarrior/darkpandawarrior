@@ -81,8 +81,8 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 ## GitHub stats
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
+  <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats" height="165" />
+  <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
 </p>
 
 <p align="left">
