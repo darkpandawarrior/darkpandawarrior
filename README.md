@@ -34,7 +34,7 @@ val siddharth = AndroidEngineer(
 - Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid)
 - Sensor-fusion location engine with predictive dead reckoning, ML Kit OCR for receipt scanning
 
-[![Mileway on GitHub](https://img.shields.io/badge/darkpandawarrior%2FMileway-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/darkpandawarrior/Mileway)
+[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true)](https://github.com/darkpandawarrior/Mileway)
 
 ---
 
@@ -49,7 +49,7 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 - **Bespoke design identity** — "License Raj Deco" (teak/brass/cream, Rozha One display font, 5 Canvas-drawn intaglio role glyphs, stamped-instrument UI language)
 - Gauntlet mode (5-rung ladder), Team mode, Spectator demo, interactive tutorial; full Fastlane + CI prod pipeline
 
-[![Kursi on GitHub](https://img.shields.io/badge/darkpandawarrior%2FKursi-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/darkpandawarrior/Kursi)
+[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=tokyonight&hide_border=true)](https://github.com/darkpandawarrior/Kursi)
 
 ---
 
@@ -81,8 +81,8 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 ## GitHub stats
 
 <p align="left">
-  <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub stats" height="165" />
-  <img src="https://github-readme-stats-git-master-rickstaa.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
+  <img src="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" alt="GitHub stats" height="165" />
+  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
 </p>
 
 <p align="left">
