@@ -34,7 +34,8 @@ val siddharth = AndroidEngineer(
 - Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid)
 - Sensor-fusion location engine with predictive dead reckoning, ML Kit OCR for receipt scanning
 
-[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true)](https://github.com/darkpandawarrior/Mileway)
+[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-dark-mode-only)
+[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-light-mode-only)
 
 ---
 
@@ -49,7 +50,8 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 - **Bespoke design identity** — "License Raj Deco" (teak/brass/cream, Rozha One display font, 5 Canvas-drawn intaglio role glyphs, stamped-instrument UI language)
 - Gauntlet mode (5-rung ladder), Team mode, Spectator demo, interactive tutorial; full Fastlane + CI prod pipeline
 
-[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=tokyonight&hide_border=true)](https://github.com/darkpandawarrior/Kursi)
+[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Kursi#gh-dark-mode-only)
+[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Kursi#gh-light-mode-only)
 
 ---
 
@@ -80,14 +82,26 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 
 ## GitHub stats
 
-<p align="left">
-  <img src="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" alt="GitHub stats" height="165" />
-  <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" />
+  <img align="left" src="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=default&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" alt="GitHub stats" height="165" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" />
+  <img align="left" src="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=default&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
+</picture>
 
-<p align="left">
-  <img src="https://streak-stats.demolab.com?user=darkpandawarrior&theme=tokyonight&hide_border=true" alt="GitHub streak" height="165" />
-</p>
+<br clear="left" />
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=darkpandawarrior&theme=tokyonight&hide_border=true" />
+  <img src="https://streak-stats.demolab.com?user=darkpandawarrior&theme=default&hide_border=true" alt="GitHub streak" height="165" />
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darkpandawarrior/darkpandawarrior/output/github-contribution-grid-snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/darkpandawarrior/darkpandawarrior/output/github-contribution-grid-snake.svg" alt="Contribution snake animation" width="100%" />
+</picture>
 
 ## Connect
 
