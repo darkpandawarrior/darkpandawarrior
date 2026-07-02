@@ -107,7 +107,7 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
   <img src="https://raw.githubusercontent.com/darkpandawarrior/darkpandawarrior/output/github-contribution-grid-snake.svg" alt="Contribution snake animation" width="100%" />
 </picture>
 
-<img src="/metrics.svg" alt="Isometric contribution calendar + recent activity" width="100%" />
+<img src="/metrics.svg" alt="Isometric contribution calendar" width="100%" />
 
 ## Connect
 
