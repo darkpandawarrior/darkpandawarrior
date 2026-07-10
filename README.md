@@ -60,12 +60,27 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 
 ---
 
+### 💳 PaymentsLab — Payments Integration Lab
+
+> **Kotlin Multiplatform** · Android + iOS · Ktor backend · 35-module architecture
+
+An Integration Lab for the Android payments ecosystem — every gateway behind one abstraction, with a live look at what actually happens on each transaction.
+
+- **66-gateway catalog** behind one `PaymentGateway` abstraction — Razorpay, Cashfree, Stripe (+ Google Pay), Square, Omise, UPI intent, plus hosted-webview (47) and mobile-money (8) archetypes covering the rest; one Gradle module per native-SDK provider, contributed via Koin's `getAll<PaymentGateway>()`
+- **Five money-movement rails beyond pay-in** — payouts, mandates & subscriptions, a card vault, marketplace Connect onboarding, and a double-entry wallet ledger, each idempotency-keyed like the pay-in path
+- **Server is the source of truth** — a companion Ktor server owns order creation, HMAC-SHA256 signature verification and webhook reconciliation; the client callback is only ever treated as a hint
+- **Process-death recovery + VAPT-grade security** — every in-flight payment is journaled to Room before the SDK opens; Android Keystore AES-256-GCM at rest, device-integrity checks, certificate pinning
+
+[![PaymentsLab on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=PaymentsLab&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/PaymentsLab#gh-dark-mode-only)
+[![PaymentsLab on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=PaymentsLab&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/PaymentsLab#gh-light-mode-only)
+
+---
+
 ### Side projects
 
 | Project | What it is |
 |---------|-----------|
 | [**cv-siddharth**](https://github.com/darkpandawarrior/cv-siddharth) &nbsp;[![Live](https://img.shields.io/badge/Live↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app) | Interactive CV with AI assistant — React 19, multi-provider LLM chat, 3D hero, printable résumé |
-| [**PaymentsLab**](https://github.com/darkpandawarrior/PaymentsLab) | Kotlin Multiplatform payments-integration lab — 35 modules, 66 gateways behind one `PaymentGateway` abstraction, 5 money-movement rails, Ktor server owning signature verification + webhook reconciliation |
 | [**HireSignal**](https://github.com/darkpandawarrior/career-ops) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery (62 providers), evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on open-source career-ops |
 
 ### Open-source contributions
