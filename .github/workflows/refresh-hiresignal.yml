@@ -1,0 +1,39 @@
+name: Refresh HireSignal stats
+
+# Keeps the fastest-drifting numbers (merged PR count, provider count) current
+# against kirklazar-android/hiresignal — that repo merges PRs same-day.
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-hiresignal
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Refresh HireSignal PR/provider counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/gen-hiresignal-stats.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "HireSignal stats already current."
+          else
+            git commit -m "chore: refresh HireSignal PR/provider counts"
+            git push
+          fi

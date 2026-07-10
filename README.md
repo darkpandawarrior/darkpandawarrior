@@ -31,12 +31,13 @@ val siddharth = AndroidEngineer(
 
 ### 🗺 Mileway — Offline-first Mileage & Trip Tracker
 
-> **Kotlin Multiplatform** · iOS + Android + Wear OS · 23-module clean architecture
+> **Kotlin Multiplatform** · Android + iOS + Wear OS + watchOS + Desktop · 28-module clean architecture
 
-- iOS fully live — kmpworkmanager (BGTask dispatcher + AppDelegate), all screens in `commonMain`
-- **96 Roborazzi screenshot tests** on JVM (no emulator, no network), detekt / ktlint / Kover, CI
+- Five platforms from one codebase — native SwiftUI watchOS app, Glance + WidgetKit home-screen widgets, iOS Live Activity/Dynamic Island
+- **149 Roborazzi screenshot tests** on JVM (no emulator, no network), detekt / ktlint / Kover, CI
 - Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid)
 - Sensor-fusion location engine with predictive dead reckoning, ML Kit OCR for receipt scanning
+- **V24 (in progress):** a plugin-composition registry driving four persona presets (Corporate Commuter, Super-App Consumer, Gig Driver, Minimal Guest), plus delegation, verification, growth and wallet/payout depth
 
 [![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-dark-mode-only)
 [![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-light-mode-only)
@@ -45,11 +46,11 @@ val siddharth = AndroidEngineer(
 
 ### 🃏 Kursi — Bluffing Card Game
 
-> **Compose Multiplatform** · Android + iOS + Desktop · ISMCTS + LLM AI opponents · Koin
+> **Compose Multiplatform** · Android + iOS + Desktop + Web (Wasm) · 14 modules · ISMCTS + LLM AI opponents · Koin
 
 Satirical India corporate-political underworld — *Kursi ke liye kuch bhi karega*
 
-- **Tiered AI system** — ISMCTS bots (8k iterations) → cloud LLM upgrade (Anthropic / OpenAI / Gemini / on-device); each of 10 personas has a personality profile driving targeting and bluff choices
+- **Tiered AI system** — ISMCTS bots (1.5k–16k iterations by difficulty) → cloud LLM upgrade (Anthropic / OpenAI / Gemini / on-device); each of 10 personas has a personality profile driving targeting and bluff choices
 - **DARBAR social layer** — bots form alliances, carry grudges, send Hinglish chat; 4 story arcs; players can manipulate the social fabric — *without breaking the engine's byte-for-byte determinism*
 - **Bespoke design identity** — "License Raj Deco" (teak/brass/cream, Rozha One display font, 5 Canvas-drawn intaglio role glyphs, stamped-instrument UI language)
 - Gauntlet mode (5-rung ladder), Team mode, Spectator demo, interactive tutorial; full Fastlane + CI prod pipeline
@@ -64,11 +65,12 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 | Project | What it is |
 |---------|-----------|
 | [**cv-siddharth**](https://github.com/darkpandawarrior/cv-siddharth) &nbsp;[![Live](https://img.shields.io/badge/Live↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app) | Interactive CV with AI assistant — React 19, multi-provider LLM chat, 3D hero, printable résumé |
-| [**HireSignal**](https://github.com/darkpandawarrior/career-ops) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery (23 providers), evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on open-source career-ops |
+| [**PaymentsLab**](https://github.com/darkpandawarrior/PaymentsLab) | Kotlin Multiplatform payments-integration lab — 35 modules, 66 gateways behind one `PaymentGateway` abstraction, 5 money-movement rails, Ktor server owning signature verification + webhook reconciliation |
+| [**HireSignal**](https://github.com/darkpandawarrior/career-ops) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery (62 providers), evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on open-source career-ops |
 
 ### Open-source contributions
 
-- **[HireSignal](https://github.com/kirklazar-android/hiresignal)** (career-ops) — **4 merged PRs**: [career-ops 1.14 System-Layer sync](https://github.com/kirklazar-android/hiresignal/pull/8), [production-grade README](https://github.com/kirklazar-android/hiresignal/pull/7), [multi-profile switcher](https://github.com/kirklazar-android/hiresignal/pull/5), [dashboard tabs](https://github.com/kirklazar-android/hiresignal/pull/4)
+- **[HireSignal](https://github.com/kirklazar-android/hiresignal)** (career-ops) — **30 merged PRs**, including [HireSignal 2.0's multi-profile/scoring/onboarding fusion](https://github.com/kirklazar-android/hiresignal/pull/9), [a production-grade README refresh](https://github.com/kirklazar-android/hiresignal/pull/48), the [career-ops 1.14 System-Layer sync](https://github.com/kirklazar-android/hiresignal/pull/8), and the [dashboard tabs](https://github.com/kirklazar-android/hiresignal/pull/4)
 
 ## Tech stack
 
