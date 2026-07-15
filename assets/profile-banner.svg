@@ -1,0 +1,43 @@
+<svg width="1000" height="210" viewBox="0 0 1000 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Siddharth Pandalai — Senior Android Engineer, Kotlin and Compose Multiplatform">
+  <defs>
+    <linearGradient id="p-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="p-word" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7F52FF"/>
+      <stop offset="50%" stop-color="#4285F4"/>
+      <stop offset="100%" stop-color="#3DDC84"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="998" height="208" rx="18" fill="url(#p-bg)" stroke="#30363d" stroke-width="1"/>
+
+  <text x="500" y="66" text-anchor="middle" font-family="'Segoe UI', -apple-system, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="url(#p-word)">Siddharth Pandalai</text>
+  <text x="500" y="94" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" letter-spacing="4" fill="#94a3b8">SENIOR ANDROID ENGINEER · KOTLIN · JETPACK COMPOSE · KMP</text>
+
+  <!-- one Kotlin Multiplatform core -> a horizontal rail of platform targets, each lighting in turn -->
+  <line x1="150" y1="134" x2="878" y2="134" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="150" cy="134" r="9" fill="#7F52FF"/>
+  <g font-family="system-ui, sans-serif" font-size="11.5" font-weight="600" text-anchor="middle">
+    <circle cx="290" cy="134" r="5.5" fill="#3DDC84"><animate attributeName="fill-opacity" values="0.35;1;0.35" dur="2.8s" begin="0.0s" repeatCount="indefinite"/></circle>
+    <text x="290" y="158" fill="#8b95a5">Android</text>
+    <circle cx="437" cy="134" r="5.5" fill="#4285F4"><animate attributeName="fill-opacity" values="0.35;1;0.35" dur="2.8s" begin="0.4s" repeatCount="indefinite"/></circle>
+    <text x="437" y="158" fill="#8b95a5">iOS</text>
+    <circle cx="584" cy="134" r="5.5" fill="#7F52FF"><animate attributeName="fill-opacity" values="0.35;1;0.35" dur="2.8s" begin="0.8s" repeatCount="indefinite"/></circle>
+    <text x="584" y="158" fill="#8b95a5">Wear OS</text>
+    <circle cx="731" cy="134" r="5.5" fill="#4285F4"><animate attributeName="fill-opacity" values="0.35;1;0.35" dur="2.8s" begin="1.2s" repeatCount="indefinite"/></circle>
+    <text x="731" y="158" fill="#8b95a5">Desktop</text>
+    <circle cx="878" cy="134" r="5.5" fill="#3DDC84"><animate attributeName="fill-opacity" values="0.35;1;0.35" dur="2.8s" begin="1.6s" repeatCount="indefinite"/></circle>
+    <text x="878" y="158" fill="#8b95a5">Web (Wasm)</text>
+  </g>
+  <text x="150" y="158" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" letter-spacing="1" fill="#7F52FF" font-weight="600">KMP CORE</text>
+
+  <!-- a build signal travels the rail -->
+  <circle r="3.5" fill="#ffffff">
+    <animateMotion dur="2.8s" repeatCount="indefinite" path="M 150 134 L 878 134"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.9;1" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="500" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12.5" letter-spacing="2" fill="#64748b">5+ YEARS · 50K+ MAU · 92% COMPOSE · GPS ACCURACY 50% to 95% · 80% CRASH REDUCTION</text>
+</svg>
