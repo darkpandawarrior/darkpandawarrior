@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/profile-banner.svg" alt="Siddharth Pandalai — Senior Android Engineer · Kotlin · Jetpack Compose · Kotlin Multiplatform" width="1000"/>
+<img src="assets/profile-banner.gif" alt="Siddharth Pandalai — Senior Android Engineer · Kotlin · Jetpack Compose · Kotlin Multiplatform" width="1000"/>
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=7F52FF&width=650&lines=Senior+Android+Engineer+%40+Dice.tech;50k%2B+MAU+%C2%B7+Platform+Owner+%C2%B7+5%2B+years;Kotlin+%C2%B7+Jetpack+Compose+%C2%B7+KMP;GPS%3A+50%25+%E2%86%92+95%25+in+production" alt="Typing SVG" />
 
