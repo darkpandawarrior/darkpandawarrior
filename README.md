@@ -28,10 +28,10 @@ val siddharth = AndroidEngineer(
 
 ## What I've shipped
 
-- 📍 **Location engineering** — predictive dead reckoning + sensor fusion (accelerometer + GPS), taking tracking accuracy from **50% → 95%** in production, with spike detection and a deterministic recompute that re-derives history when the math changes.
+- 📍 **Location engineering** — predictive dead reckoning over GPS/IMU with Kalman smoothing, taking tracking accuracy from **50% → 95%** in production, with spike detection and a deterministic recompute that re-derives history when the math changes.
 - 🎨 **92% Jetpack Compose migration** of a **738k+ LOC** codebase, including a custom theme engine that cut UI-development friction by **60%**.
 - 🛡️ **80% crash reduction** — dual Firebase Crashlytics + Sentry monitoring (programmatic init, ProGuard mapping, ANR detection), threading fixes and structured-concurrency cleanup.
-- 🔐 **Security hardening** — SQLCipher + Android Keystore (AES-256), SSL pinning as dual build flavors, BiometricPrompt + CryptoObject, VAPT/banking-compliant.
+- 🔐 **Security hardening** — Android Keystore field-level encryption (AES-256), SSL pinning across 9 domains (5 SHA-256 pins) as dual build flavors, a BiometricPrompt access gate, EncryptedSharedPreferences/DataStore+Tink — VAPT/banking-compliant.
 - ✈️ **Trip V2 travel platform** — mileage submission linked to Itinerary V2, approval flows and full analytics across the mileage ecosystem.
 - 🏢 **20+ white-label client apps** at Jugnoo / Jungleworks with an **80% reduction** in delivery time via build automation — and a **+85%** Play Store rating with reviews up **80×**.
 
@@ -90,7 +90,7 @@ The app *shape* the toolkit slots into: one shared Compose UI, a wired root-navi
 - Five platforms from one codebase — native SwiftUI watchOS app, Glance + WidgetKit widgets, iOS Live Activity / Dynamic Island.
 - **149 Roborazzi screenshot tests** on the JVM (no emulator, no network), detekt / ktlint / Kover, CI.
 - Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid).
-- Sensor-fusion location engine with predictive dead reckoning; on-device document AI (OCR field-fill, doc-type classification) and an on-device LLM assistant behind a shared `LlmGateway`.
+- Location engine with predictive dead reckoning, a Kalman smoother and `MotionFusion` gravity/linear-acceleration filtering; on-device document AI (OCR field-fill, doc-type classification) and an on-device LLM assistant behind a shared `LlmGateway`.
 
 [![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-dark-mode-only)
 [![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-light-mode-only)
@@ -142,7 +142,7 @@ An Integration Lab for the Android payments ecosystem — every gateway behind o
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Coroutines](https://img.shields.io/badge/Coroutines%20%2B%20Flow-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Koin](https://img.shields.io/badge/Koin%20%2F%20Hilt-2196F3?style=for-the-badge&logo=google&logoColor=white)
-![Room](https://img.shields.io/badge/Room%20%2B%20SQLCipher-FF6F00?style=for-the-badge&logo=sqlite&logoColor=white)
+![Room](https://img.shields.io/badge/Room%20%2B%20DataStore-FF6F00?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Ktor](https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Fastlane](https://img.shields.io/badge/Fastlane%20CI%2FCD-00F200?style=for-the-badge&logo=fastlane&logoColor=black)
 
