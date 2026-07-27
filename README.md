@@ -29,7 +29,7 @@ val siddharth = AndroidEngineer(
 ## What I've shipped
 
 - 📍 **Location engineering** — predictive dead reckoning over GPS/IMU with Kalman smoothing, taking tracking accuracy from **50% → 95%** in production, with spike detection and a deterministic recompute that re-derives history when the math changes.
-- 🎨 **92% Jetpack Compose migration** of a **738k+ LOC** codebase, including a custom theme engine that cut UI-development friction by **60%**.
+- 🎨 **~87% UI-layer Jetpack Compose migration** of a **738k+ LOC** codebase, including a custom theme engine that cut UI-development friction by **60%**.
 - 🛡️ **80% crash reduction** — dual Firebase Crashlytics + Sentry monitoring (programmatic init, ProGuard mapping, ANR detection), threading fixes and structured-concurrency cleanup.
 - 🔐 **Security hardening** — Android Keystore field-level encryption (AES-256), SSL pinning across 9 domains (5 SHA-256 pins) as dual build flavors, a BiometricPrompt access gate, EncryptedSharedPreferences/DataStore+Tink — VAPT/banking-compliant.
 - ✈️ **Trip V2 travel platform** — mileage submission linked to Itinerary V2, approval flows and full analytics across the mileage ecosystem.
