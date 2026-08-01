@@ -57,7 +57,7 @@ A family of small, focused libraries — each extracted the moment a *second* co
 <td valign="top">
 
 ### ⚙️ [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic)
-**17** Gradle convention plugins
+**17** convention plugins here (22 authored in total)
 
 </td>
 <td valign="top">
@@ -85,7 +85,7 @@ The app *shape* the toolkit slots into: one shared Compose UI, a wired root-navi
 
 ### 🗺 Mileway — Offline-first Mileage & Trip Tracker
 
-> **Kotlin Multiplatform** · Android + iOS + Wear OS + watchOS + Desktop · **31-module** clean architecture
+> **Kotlin Multiplatform** · Android + iOS + Wear OS + watchOS + Desktop · **46-module** clean architecture (36 local + 10 composed from kmp-toolkit)
 
 - Five platforms from one codebase — native SwiftUI watchOS app, Glance + WidgetKit widgets, iOS Live Activity / Dynamic Island.
 - **149 Roborazzi screenshot tests** on the JVM (no emulator, no network), detekt / ktlint / Kover, CI.
@@ -114,7 +114,7 @@ Satirical India corporate-political underworld — *Kursi ke liye kuch bhi kareg
 
 ### 💳 PaymentsLab — Payments Integration Lab
 
-> **Kotlin Multiplatform** · Android + iOS · Ktor backend · **39-module** architecture
+> **Kotlin Multiplatform** · Android + iOS · Ktor backend · **40-module** architecture (15 local + 25 composed from kmp-toolkit)
 
 An Integration Lab for the Android payments ecosystem — every gateway behind one abstraction, with a live look at what actually happens on each transaction.
 
@@ -130,10 +130,11 @@ An Integration Lab for the Android payments ecosystem — every gateway behind o
 | Project | What it is |
 |---------|-----------|
 | [**cv-siddharth**](https://github.com/darkpandawarrior/cv-siddharth) &nbsp;[![Live](https://img.shields.io/badge/Live↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app) | Interactive CV with an AI assistant — React 19, multi-provider LLM chat, 3D hero, printable résumé |
-| [**HireSignal**](https://github.com/darkpandawarrior/HireSignal) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery, evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on the open-source career-ops engine |
+| **HireSignal** &nbsp;[![Case study](https://img.shields.io/badge/Case%20study↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery, evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Repo is private while v1 lands; the case study is public |
 | [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template) | The buildable CMP app seed above — fork it, `customizer.sh --package …`, and start shipping |
+| [**The Loopdown**](https://github.com/darkpandawarrior/the-loopdown) | Field notes from an engineer who writes — one war story from a real project, adapted to LinkedIn / dev.to / Hashnode / Medium with a branded card, plus the whole back catalogue. Framed as an engineer stuck in a time loop, because seniority *is* the loop: you've just run the same failure enough times to name it on sight |
 
-**Open-source contributions** — **30+ merged PRs** on the [career-ops / HireSignal](https://github.com/kirklazar-android/hiresignal) engine, including its multi-profile scoring/onboarding fusion, a production-grade README refresh, and the dashboard tabs.
+**Open-source contributions** — **4 merged PRs** to [career-ops](https://github.com/santifer/career-ops) (⭐62k+): two new ATS providers ([BambooHR](https://github.com/santifer/career-ops/pull/1141), [Breezy HR](https://github.com/santifer/career-ops/pull/1185)), a [dashboard status-cell fix](https://github.com/santifer/career-ops/pull/1186) and an [agent-inbox feature](https://github.com/santifer/career-ops/pull/1472) — every one publicly checkable. A further **38 merged PRs** went to the private HireSignal engine repo (multi-profile scoring/onboarding fusion, the README refresh, the dashboard tabs); that count is real but you'd have to take my word for it, so the public four are the ones I lead with.
 
 ## Tech stack
 
