@@ -1,191 +1,84 @@
 <div align="center">
 
-<img src="assets/profile-banner.gif" alt="Siddharth Pandalai — Senior Android Engineer · Kotlin · Jetpack Compose · Kotlin Multiplatform" width="1000"/>
+<img src="assets/profile-banner.gif" alt="Siddharth Pandalai, Senior Android Engineer, Kotlin, Jetpack Compose, Kotlin Multiplatform" width="1000"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=7F52FF&width=650&lines=Senior+Android+Engineer+%40+Dice.tech;50k%2B+MAU+%C2%B7+Platform+Owner+%C2%B7+5%2B+years;Kotlin+%C2%B7+Jetpack+Compose+%C2%B7+KMP;GPS%3A+50%25+%E2%86%92+95%25+in+production" alt="Typing SVG" />
+# Siddharth Pandalai
 
-**Senior Android Engineer** — 5+ years building Android at scale. SDE-2 & Android Platform Owner at [Dice.tech](https://dice.tech/), owning a platform serving **50,000+ MAU / 22,000+ DAU**. I ship deep, well-architected Kotlin — and I extract the reusable parts into a Multiplatform toolkit family so the next app starts further ahead.
+**Senior Android Engineer** at [Dice.tech](https://dice.tech/), where I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
 
-🌐 **[darkpandawarrior.github.io](https://darkpandawarrior.github.io)** &nbsp;·&nbsp; 📄 **[Interactive CV](https://cv-siddharth.vercel.app)** &nbsp;·&nbsp; 💼 **[LinkedIn](https://linkedin.com/in/siddharth-pandalai-3712b215a)**
-
-**[What I've shipped](#what-ive-shipped)** · **[KMP toolkit family](#the-kotlin-multiplatform-toolkit-family)** · **[Flagship apps](#flagship-open-source)** · **[Side projects](#side-projects--open-source)** · **[Tech stack](#tech-stack)** · **[Connect](#connect)**
+[Portfolio](https://cv-siddharth.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
 </div>
 
 ---
 
-> **At a glance** — **50k+ MAU / 22k DAU** platform owner · **80%** crash reduction · GPS accuracy **50% → 95%** · **~87%** UI-layer Jetpack Compose migration of a ~964k-LOC codebase · a **36-module** MIT Kotlin Multiplatform toolkit + **22** authored Gradle convention plugins, running on Android · iOS · Wear OS · Desktop · Web.
+> **80%** crash reduction &nbsp;·&nbsp; GPS accuracy **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer migrated to Compose &nbsp;·&nbsp; AES-256 Keystore encryption and SSL pinning across **9 domains**, cleared for VAPT and banking review.
 
-```kotlin
-val siddharth = AndroidEngineer(
-    location = "Pune, India",
-    yearsOfExperience = 5, // and counting
-    role = "SDE-2 · Android Platform Owner @ Dice.tech",
-    currentFocus = listOf("Compose Multiplatform", "Offline-first architecture", "Performance engineering", "System design"),
-    believesIn = "extract the reusable core the moment a second app needs it",
-)
-```
+Every number on this page and on the portfolio is checked by a script before it ships. When one of them goes stale, a build goes red rather than the page going quietly wrong.
 
-## What I've shipped
+## What I do
 
-- 📍 **Location engineering** — predictive dead reckoning over GPS/IMU with Kalman smoothing, taking tracking accuracy from **50% → 95%** in production, with spike detection and a deterministic recompute that re-derives history when the math changes.
-- 🎨 **~87% UI-layer Jetpack Compose migration** of a **~964k-LOC** codebase (772k Kotlin), including a custom theme engine that cut UI-development friction by **60%**.
-- 🛡️ **80% crash reduction** — dual Firebase Crashlytics + Sentry monitoring (programmatic init, ProGuard mapping, ANR detection), threading fixes and structured-concurrency cleanup.
-- 🔐 **Security hardening** — Android Keystore field-level encryption (AES-256), SSL pinning across 9 domains (5 SHA-256 pins) as dual build flavors, a BiometricPrompt access gate, EncryptedSharedPreferences/DataStore+Tink — VAPT/banking-compliant.
-- ✈️ **Trip V2 travel platform** — mileage submission linked to Itinerary V2, approval flows and full analytics across the mileage ecosystem.
-- 🏢 **20+ white-label client apps** at Jugnoo / Jungleworks with an **80% reduction** in delivery time via build automation — and a **+85%** Play Store rating with reviews up **80×**.
+One platform, observed at different layers. The depth is behind the links, not on this page.
 
-## The Kotlin Multiplatform toolkit family
+| Lane | The proof | The number | Depth |
+|---|---|---|---|
+| **Android at scale** | The Dice platform: GPS pipeline, Compose migration, crash and concurrency work, security hardening | 50k MAU, 22k DAU, 80% fewer crashes | [Case studies](https://cv-siddharth.vercel.app/hire) |
+| **Platform ownership** | Jugnoo's white-label estate, and the build automation that shipped it | 173 client apps on Play, 80% less delivery time | [The fleet](https://cv-siddharth.vercel.app/shipped) |
+| **Libraries and build logic** | kmp-toolkit, kmp-build-logic, kmp-app-template | 39 modules, 22 convention plugins | [The KMP family](https://cv-siddharth.vercel.app/project/kmp-family) |
+| **Tooling** | The generators that produce this page, and the guards that fail when their data ages out | every figure here is machine-checked | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) |
+| **Writing and games** | The Loopdown, Kursi | one war story, four platforms | [the-loopdown](https://github.com/darkpandawarrior/the-loopdown) |
 
-Most of my open source is one system: a family of decoupled repos where the **reusable libraries**, the **shared build logic**, and the **app shape** each live in their own place — so a new app pulls them in and starts at "write the feature."
-
-<table>
-<tr>
-<td width="34%" valign="top">
-
-### 🧰 [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit)
-**36-module** MIT KMP library monorepo
-
-</td>
-<td valign="top">
-
-A family of small, focused libraries — each extracted the moment a *second* consumer needed the same logic, never designed as a "platform" up front. Typed `Result`, an MVI ViewModel core, an offline-first `store` (decision engine + read/write streams), `network`, `security`, on-device AI (ML Kit GenAI / MediaPipe / Apple Foundation Models behind one seam), `device-integrity`, an operation-log `offline-outbox`, `feedback`, encrypted `settings`, and a **19-provider** payment-gateway abstraction. MIT.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-### ⚙️ [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic)
-**17** convention plugins here (22 authored in total)
-
-</td>
-<td valign="top">
-
-The AGP / Kotlin / Compose / test / lint / Firebase / Room / Koin setup written **once** and applied with one line — `shared.kmp.library`, `shared.kmp.compose`, `shared.android.firebase`, `shared.purity`, and more. Vendored via `includeBuild` across **5** repos, so version bumps aren't copy-pasted per project.
-
-</td>
-</tr>
-<tr>
-<td valign="top">
-
-### 🌱 [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template)
-A buildable CMP app seed
-
-</td>
-<td valign="top">
-
-The app *shape* the toolkit slots into: one shared Compose UI, a wired root-navigation scaffold (Splash → Login → Home), and thin Android + Desktop shells — nothing to delete before you begin. `customizer.sh` renames the whole project in one command.
-
-</td>
-</tr>
-</table>
-
-## Flagship open source
-
-### 🗺 Mileway — Offline-first Mileage & Trip Tracker
-
-> **Kotlin Multiplatform** · Android + iOS + Wear OS + watchOS + Desktop · **46-module** clean architecture (36 local + 10 composed from kmp-toolkit)
-
-- Five platforms from one codebase — native SwiftUI watchOS app, Glance + WidgetKit widgets, iOS Live Activity / Dynamic Island.
-- **149 Roborazzi screenshot tests** on the JVM (no emulator, no network), detekt / ktlint / Kover, CI.
-- Dual `gms` / `noGms` distribution with a dependency-prefix guard (Play Store + F-Droid).
-- Location engine with predictive dead reckoning, a Kalman smoother and `MotionFusion` gravity/linear-acceleration filtering; on-device document AI (OCR field-fill, doc-type classification) and an on-device LLM assistant behind a shared `LlmGateway`.
-
-[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-dark-mode-only)
-[![Mileway on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Mileway&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Mileway#gh-light-mode-only)
-
----
-
-### 🃏 Kursi — Bluffing Card Game
-
-> **Compose Multiplatform** · Android + iOS + Desktop + Web (Wasm) · **13 modules** · ISMCTS + LLM AI opponents
-
-Satirical India corporate-political underworld — *Kursi ke liye kuch bhi karega.*
-
-- **Tiered AI** — ISMCTS bots (1.5k–16k iterations by difficulty) → cloud-LLM upgrade (Anthropic / OpenAI / Gemini / on-device); each of 10 personas has a personality profile driving targeting and bluff choices.
-- **DARBAR social layer** — bots form alliances, carry grudges, send Hinglish chat — *without breaking the engine's byte-for-byte determinism.*
-- A deterministic, dependency-free `:engine` (a `shared.purity` tripwire keeps it that way), consuming the kmp-toolkit family via a git submodule.
-
-[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/Kursi#gh-dark-mode-only)
-[![Kursi on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=Kursi&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/Kursi#gh-light-mode-only)
-
----
-
-### 💳 PaymentsLab — Payments Integration Lab
-
-> **Kotlin Multiplatform** · Android + iOS · Ktor backend · **40-module** architecture (15 local + 25 composed from kmp-toolkit)
-
-An Integration Lab for the Android payments ecosystem — every gateway behind one abstraction, with a live look at what actually happens on each transaction.
-
-- **Gateway catalog** behind one `PaymentGateway` abstraction — Razorpay, Cashfree, Stripe (+ Google Pay), Square, Omise, UPI intent, plus hosted-webview and mobile-money archetypes; one Gradle module per native-SDK provider, contributed via Koin's `getAll<PaymentGateway>()`.
-- **Server is the source of truth** — a companion Ktor server owns order creation, HMAC-SHA256 signature verification and webhook reconciliation; the client callback is only ever a hint.
-- **Process-death recovery + VAPT-grade security** — every in-flight payment is journaled to Room before the SDK opens; Android Keystore AES-256-GCM at rest, device-integrity checks, certificate pinning.
-
-[![PaymentsLab on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=PaymentsLab&theme=tokyonight&hide_border=true#gh-dark-mode-only)](https://github.com/darkpandawarrior/PaymentsLab#gh-dark-mode-only)
-[![PaymentsLab on GitHub](https://github-stats-extended.vercel.app/api/pin/?username=darkpandawarrior&repo=PaymentsLab&theme=default&hide_border=true#gh-light-mode-only)](https://github.com/darkpandawarrior/PaymentsLab#gh-light-mode-only)
-
-## Side projects & open source
-
-| Project | What it is |
-|---------|-----------|
-| [**cv-siddharth**](https://github.com/darkpandawarrior/cv-siddharth) &nbsp;[![Live](https://img.shields.io/badge/Live↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app) | Interactive CV with an AI assistant — React 19, multi-provider LLM chat, 3D hero, printable résumé |
-| **HireSignal** &nbsp;[![Case study](https://img.shields.io/badge/Case%20study↗-000000?style=flat-square&logo=vercel&logoColor=white)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard — resume onboarding, reverse-ATS discovery, evidence-based fit scoring, tailored résumés, single-server multi-profile. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Repo is private while v1 lands; the case study is public |
-| [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template) | The buildable CMP app seed above — fork it, `customizer.sh --package …`, and start shipping |
-| [**cv-siddharth-kmp**](https://github.com/darkpandawarrior/cv-siddharth-kmp) | This portfolio rebuilt in **Compose Multiplatform** — ~16.5k lines of Kotlin in one `commonMain`, rendering to Kotlin/Wasm, Desktop, Android and iOS. Deliberately bleeding edge (Kotlin 2.4.20-Beta1, CMP 1.12.0-beta02, AGP 9.4.0-alpha04) and near-dependency-free: routing, the Mermaid layout engine, the SkSL wash, the SSE parser and every icon hand-built on Compose primitives |
-| [**The Loopdown**](https://github.com/darkpandawarrior/the-loopdown) | Field notes from an engineer who writes — one war story from a real project, adapted to LinkedIn / dev.to / Hashnode / Medium with a branded card, plus the whole back catalogue. Framed as an engineer stuck in a time loop, because seniority *is* the loop: you've just run the same failure enough times to name it on sight |
-
-**Open-source contributions** — **9 merged PRs** to [career-ops](https://github.com/santifer/career-ops) (⭐63k+): two new ATS providers ([BambooHR](https://github.com/santifer/career-ops/pull/1141), [Breezy HR](https://github.com/santifer/career-ops/pull/1185)), a [dashboard status-cell fix](https://github.com/santifer/career-ops/pull/1186) and an [agent-inbox feature](https://github.com/santifer/career-ops/pull/1472).
-
-Most recently a run of **five correctness fixes**, each shipped with a reproduction and a regression test — the class of bug that reports success while doing the wrong thing: distinct non-Latin company names [collapsing into one and deleting a tracked application](https://github.com/santifer/career-ops/pull/2587), `$`-patterns in CV text [splicing the template into the résumé](https://github.com/santifer/career-ops/pull/2588) at exit 0, a date filter [silently ignored in its `--flag=value` form](https://github.com/santifer/career-ops/pull/2589), an unfilled [template token shipping into a cover letter](https://github.com/santifer/career-ops/pull/2586), and the dashboard [caching its canonical states for the process lifetime](https://github.com/santifer/career-ops/pull/2590). Every one publicly checkable.
-
-## Tech stack
-
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Coroutines](https://img.shields.io/badge/Coroutines%20%2B%20Flow-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-![Koin](https://img.shields.io/badge/Koin%20%2F%20Hilt-2196F3?style=for-the-badge&logo=google&logoColor=white)
-![Room](https://img.shields.io/badge/Room%20%2B%20DataStore-FF6F00?style=for-the-badge&logo=sqlite&logoColor=white)
-![Ktor](https://img.shields.io/badge/Ktor-087CFA?style=for-the-badge&logo=kotlin&logoColor=white)
-![Fastlane](https://img.shields.io/badge/Fastlane%20CI%2FCD-00F200?style=for-the-badge&logo=fastlane&logoColor=black)
-
-**Architecture:** MVVM + Clean Architecture · MVI unidirectional state · Repository pattern · Multi-module · Gradle convention plugins
-**Also:** WorkManager · Foreground Services · Retrofit/OkHttp + Ktor · on-device AI (ML Kit GenAI / MediaPipe / Foundation Models) · Roborazzi · Firebase + Sentry · agentic dev workflows (MCP)
-
-## GitHub stats
+## The fleet
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=tokyonight&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" />
-  <img align="left" src="https://github-stats-extended.vercel.app/api?username=darkpandawarrior&show_icons=true&theme=default&hide_border=true&show=reviews,prs_merged,prs_merged_percentage" alt="GitHub stats" height="165" />
-</picture>
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=tokyonight&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" />
-  <img align="left" src="https://github-stats-extended.vercel.app/api/top-langs/?username=darkpandawarrior&layout=compact&theme=default&hide_border=true&hide=html,css,javascript,php,coffeescript,tsql,dart,python,c%2B%2B,jupyter%20notebook&exclude_repo=career-ops,SINC-P" alt="Top languages" height="165" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/fleet-dark.svg" />
+  <img src="assets/fleet-light.svg" alt="White-label client apps by the year each last shipped: 89 still live and 84 delisted, out of 173 that reached the Play Store" width="100%" />
 </picture>
 
-<br clear="left" />
+At Jugnoo I built the per-tenant flavour system, one build config and one set of resource overlays, that let a client app ship without forking the codebase. The interesting number is not the total, it is the shape: apps launched under that system are still being updated years later. [See the fleet](https://cv-siddharth.vercel.app/shipped), checked against the Play Store and Internet Archive crawls rather than memory.
+
+## The KMP family
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=darkpandawarrior&theme=tokyonight&hide_border=true" />
-  <img src="https://streak-stats.demolab.com?user=darkpandawarrior&theme=default&hide_border=true" alt="GitHub streak" height="165" />
+  <source media="(prefers-color-scheme: dark)" srcset="assets/modules-dark.svg" />
+  <img src="assets/modules-light.svg" alt="kmp-toolkit dependency graph: 39 modules and 43 internal dependencies, laid out by computed dependency depth" width="100%" />
 </picture>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/darkpandawarrior/darkpandawarrior/output/github-contribution-grid-snake-dark.svg" />
-  <img src="https://raw.githubusercontent.com/darkpandawarrior/darkpandawarrior/output/github-contribution-grid-snake.svg" alt="Contribution snake animation" width="100%" />
-</picture>
+That graph is parsed from `settings.gradle.kts` and each module's build file, so it shows the architecture rather than a drawing of it. Nothing was extracted into a library until a second consumer needed the same logic.
 
-<img src="metrics.svg" alt="Isometric contribution calendar" width="100%" />
+- [**kmp-toolkit**](https://github.com/darkpandawarrior/kmp-toolkit): 39 modules. Typed `Result`, an MVI core, an offline-first store, network, security, on-device AI behind one seam, and a 19-provider payment abstraction. MIT.
+- [**kmp-build-logic**](https://github.com/darkpandawarrior/kmp-build-logic): 22 authored Gradle convention plugins, vendored by `includeBuild` across five repos so a version bump happens once.
+- [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template): the app shape the toolkit slots into, buildable on day one.
+
+## Everything else
+
+| Repo | What it is | Its number |
+|---|---|---|
+| [Mileway](https://github.com/darkpandawarrior/Mileway) | Mileage and trip tracking, offline-first, Ktor backend | 46 modules, 5 platforms |
+| [PaymentsLab](https://github.com/darkpandawarrior/PaymentsLab) | Every payment gateway behind one abstraction, with each transaction's lifecycle visible | 40 modules |
+| [Kursi](https://github.com/darkpandawarrior/Kursi) | Bluffing card game with ISMCTS and LLM opponents, on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
+| [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | 83 test files |
+| [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio rebuilt in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android and iOS | near dependency-free |
+| **HireSignal** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
+| [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
+| [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
+
+## Open source
+
+**24 merged PRs** to [career-ops](https://github.com/santifer/career-ops) (⭐68k+): two new ATS providers ([BambooHR](https://github.com/santifer/career-ops/pull/1141), [Breezy HR](https://github.com/santifer/career-ops/pull/1185)), a [dashboard status-cell fix](https://github.com/santifer/career-ops/pull/1186) and an [agent-inbox feature](https://github.com/santifer/career-ops/pull/1472).
+
+Most of the rest are correctness fixes, each shipped with a reproduction and a regression test, and each the same class of bug: code that reports success while doing the wrong thing. Distinct non-Latin company names [collapsing into one and deleting a tracked application](https://github.com/santifer/career-ops/pull/2587). `$`-patterns in CV text [splicing the template into the resume](https://github.com/santifer/career-ops/pull/2588) at exit 0. A date filter [silently ignored in its `--flag=value` form](https://github.com/santifer/career-ops/pull/2589). All publicly checkable.
+
+**Stack:** Kotlin · Jetpack Compose · Compose Multiplatform · Coroutines and Flow · Koin and Hilt · Room and DataStore · Ktor · WorkManager · Gradle convention plugins
+**Architecture:** MVVM and Clean Architecture · MVI unidirectional state · offline-first · multi-module
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:siddharthpandalai990@gmail.com)
 [![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@siddharthpandalai990)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/12678663/siddharth-pandalai)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com/siddharthpandalai990)
 
 ---
 
-<div align="center"><sub>⚡ Avid reader, chess player, and connoisseur of puns & coffee.</sub></div>
+<div align="center"><sub>Avid reader, chess player, and connoisseur of puns and coffee.</sub></div>

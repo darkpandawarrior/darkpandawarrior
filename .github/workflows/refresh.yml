@@ -1,0 +1,107 @@
+name: Refresh generated content
+
+# Everything on this README that can drift is regenerated here, from the source
+# of truth rather than from a copy: the career-ops counts from the upstream API,
+# the fleet chart from cv-siddharth's store.ts, the dependency graph from
+# kmp-toolkit's build files.
+#
+# The failure mode this is built against: a generator that keeps "succeeding"
+# while its data ages out. The equivalent job on cv-siddharth exited 1 for eight
+# straight days in August 2026 and nobody noticed, because a red cron on a repo
+# you are not watching is indistinguishable from a green one. So a failure here
+# does not just go red, it opens an issue.
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # continue-on-error on each: one dead generator must not stop the others
+      # from refreshing. The gate step below is what actually fails the run.
+      - name: career-ops counts
+        id: stats
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/gen-hiresignal-stats.mjs
+
+      - name: Fleet lifecycle chart
+        id: fleet
+        continue-on-error: true
+        run: node scripts/gen-fleet-chart.mjs
+
+      # Weekly: a module graph does not change daily, and this one makes ~40
+      # requests. Mondays only, but it still runs on a manual dispatch.
+      - name: kmp-toolkit dependency graph
+        id: graph
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            node scripts/gen-module-graph.mjs
+          else
+            echo "Not Monday, skipping the module graph."
+          fi
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets
+          if git diff --cached --quiet; then
+            echo "Everything already current."
+          else
+            git commit -m "chore: refresh generated content"
+            git push
+          fi
+
+      # The healing step. A generator that failed is a claim on this profile that
+      # has stopped being maintained, so it gets a tracked issue rather than a
+      # red square on a page nobody opens. One issue, reused, so a week of
+      # failures is one thread and not seven.
+      - name: Open an issue if any generator failed
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BODY="A generator failed on $(date -u +%Y-%m-%d), so at least one number on the README has stopped being refreshed.
+
+          | generator | outcome |
+          | --- | --- |
+          | career-ops counts | ${{ steps.stats.outcome }} |
+          | fleet chart | ${{ steps.fleet.outcome }} |
+          | module graph | ${{ steps.graph.outcome }} |
+
+          Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          A non-zero exit from one of these means a DEAD PATTERN, not a network blip: fetch failures are
+          swallowed on purpose and leave the committed files alone. So the prose was edited and a regex
+          stopped matching. Fix the pattern rather than removing the check."
+
+          EXISTING=$(gh issue list --state open --label generator-failure --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "A README generator is failing" --label generator-failure --body "$BODY"
+          fi
+
+      - name: Fail the run so the badge goes red
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure'
+        run: exit 1

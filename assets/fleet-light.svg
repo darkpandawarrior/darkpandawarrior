@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-label="White-label client apps by year, 89 still live and 84 delisted out of 173 total">
+<rect width="900" height="320" fill="#ffffff"/>
+<text x="48" y="26" font-size="15" font-weight="700" fill="#1f2328" font-family="system-ui,-apple-system,Segoe UI,sans-serif">The white-label fleet, by the year each app last shipped</text>
+<text x="48" y="44" font-size="12" fill="#59636e" font-family="system-ui,-apple-system,Segoe UI,sans-serif">173 client apps reached Play. 89 are still listed today, across 47 companies.</text>
+<g font-family="system-ui,-apple-system,Segoe UI,sans-serif"><line x1="48" y1="268" x2="876" y2="268" stroke="#d1d9e0" stroke-width="1"/><text x="38" y="272" text-anchor="end" font-size="11" fill="#59636e">0</text><line x1="48" y1="170.43243243243245" x2="876" y2="170.43243243243245" stroke="#d1d9e0" stroke-width="1"/><text x="38" y="174.43243243243245" text-anchor="end" font-size="11" fill="#59636e">19</text><line x1="48" y1="78" x2="876" y2="78" stroke="#d1d9e0" stroke-width="1"/><text x="38" y="82" text-anchor="end" font-size="11" fill="#59636e">37</text>
+    <rect x="85" y="160.2" width="64" height="107.8" fill="#c9d1d9" rx="2"/>
+    <rect x="85" y="268.0" width="64" height="0.0" fill="#7F52FF" rx="2"/>
+    <text x="117" y="152.2" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">21</text>
+    <text x="117" y="288" text-anchor="middle" font-size="12" fill="#59636e">2021</text>
+    <rect x="223" y="78.0" width="64" height="190.0" fill="#c9d1d9" rx="2"/>
+    <rect x="223" y="268.0" width="64" height="0.0" fill="#7F52FF" rx="2"/>
+    <text x="255" y="70.0" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">37</text>
+    <text x="255" y="288" text-anchor="middle" font-size="12" fill="#59636e">2022</text>
+    <rect x="361" y="160.2" width="64" height="77.0" fill="#c9d1d9" rx="2"/>
+    <rect x="361" y="237.2" width="64" height="30.8" fill="#7F52FF" rx="2"/>
+    <text x="393" y="152.2" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">21</text>
+    <text x="393" y="288" text-anchor="middle" font-size="12" fill="#59636e">2023</text>
+    <rect x="499" y="98.5" width="64" height="35.9" fill="#c9d1d9" rx="2"/>
+    <rect x="499" y="134.5" width="64" height="133.5" fill="#7F52FF" rx="2"/>
+    <text x="531" y="90.5" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">33</text>
+    <text x="531" y="288" text-anchor="middle" font-size="12" fill="#59636e">2024</text>
+    <rect x="637" y="119.1" width="64" height="15.4" fill="#c9d1d9" rx="2"/>
+    <rect x="637" y="134.5" width="64" height="133.5" fill="#7F52FF" rx="2"/>
+    <text x="669" y="111.1" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">29</text>
+    <text x="669" y="288" text-anchor="middle" font-size="12" fill="#59636e">2025</text>
+    <rect x="775" y="103.7" width="64" height="5.1" fill="#c9d1d9" rx="2"/>
+    <rect x="775" y="108.8" width="64" height="159.2" fill="#7F52FF" rx="2"/>
+    <text x="807" y="95.7" text-anchor="middle" font-size="12" font-weight="600" fill="#1f2328">32</text>
+    <text x="807" y="288" text-anchor="middle" font-size="12" fill="#59636e">2026</text></g>
+<g font-family="system-ui,-apple-system,Segoe UI,sans-serif">
+  <rect x="686" y="12" width="10" height="10" fill="#7F52FF" rx="2"/>
+  <text x="701" y="21" font-size="11" fill="#59636e">still live (89)</text>
+  <rect x="786" y="12" width="10" height="10" fill="#c9d1d9" rx="2"/>
+  <text x="801" y="21" font-size="11" fill="#59636e">delisted (84)</text>
+</g>
+<text x="48" y="310" font-size="10" fill="#59636e" font-family="system-ui,-apple-system,Segoe UI,sans-serif">Mined from 1,747 white-label branches. Delisted apps verified against Internet Archive crawls. Generated 2026-08-27.</text>
+</svg>
