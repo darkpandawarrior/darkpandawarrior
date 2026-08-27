@@ -6,7 +6,7 @@
 
 **Senior Android Engineer** — 5+ years building Android at scale. SDE-2 & Android Platform Owner at [Dice.tech](https://dice.tech/), owning a platform serving **50,000+ MAU / 22,000+ DAU**. I ship deep, well-architected Kotlin — and I extract the reusable parts into a Multiplatform toolkit family so the next app starts further ahead.
 
-🌐 **[darkpandawarrior.github.io](https://darkpandawarrior.github.io)** &nbsp;·&nbsp; 📄 **[Interactive CV](https://cv-siddharth.vercel.app)** &nbsp;·&nbsp; 💼 **[LinkedIn](https://linkedin.com/in/siddharth-pandalai-3712b215a)**
+🌐 **[darkpandawarrior.github.io](https://darkpandawarrior.github.io)** &nbsp;·&nbsp; 📄 **[Interactive CV](https://cv-siddharth.vercel.app)** &nbsp;·&nbsp; 💼 **[LinkedIn](https://linkedin.com/in/siddharth-pandalai)**
 
 **[What I've shipped](#what-ive-shipped)** · **[KMP toolkit family](#the-kotlin-multiplatform-toolkit-family)** · **[Flagship apps](#flagship-open-source)** · **[Side projects](#side-projects--open-source)** · **[Tech stack](#tech-stack)** · **[Connect](#connect)**
 
@@ -180,7 +180,7 @@ Most recently a run of **five correctness fixes**, each shipped with a reproduct
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai-3712b215a)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:siddharthpandalai990@gmail.com)
 [![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@siddharthpandalai990)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/12678663/siddharth-pandalai)
