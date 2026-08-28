@@ -1,17 +1,17 @@
 // The live control board: every claim this account makes, and whether it is
 // still being maintained.
 //
-// This is the visual the whole freshness effort was for. Green or red is what
-// GitHub already shows you. The interesting state is AMBER: a check that is
-// passing while the thing underneath it ages out. That is the failure this
-// profile actually hit in August 2026, three times, with a green suite.
+// Green or red is what GitHub already shows. The interesting state is AMBER: a
+// check that is passing while the thing underneath it ages out. That is the
+// failure this profile actually hit, three times, with a green suite.
 //
-// Every row is the same four fields: LED, SUBJECT, STATE, VERIFIED. Nothing
-// gets a fifth. Only BROKEN pulses; nothing else on the board ever moves.
+// Every row is the same four fields: LED, subject, state, age. Nothing gets a
+// fifth. Only BROKEN pulses; nothing else on the board ever moves.
 //
 // Fetch failure leaves the committed SVGs alone. Parsing nothing exits 1,
 // because a board that renders empty is worse than no board.
 import { writeFileSync } from "node:fs";
+import { THEMES, S, PAD, W, header, footer, open, close, esc, fit } from "./lib/panel.mjs";
 
 const token = process.env.GITHUB_TOKEN;
 const H = { Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
@@ -30,7 +30,7 @@ const WORKFLOWS = [
 
 const ago = (d) => {
   const h = Math.floor((Date.now() - Date.parse(d)) / 3.6e6);
-  return h < 24 ? `${h}h ago` : `${Math.floor(h / 24)}d ago`;
+  return h < 1 ? "just now" : h < 24 ? `${h}h ago` : `${Math.floor(h / 24)}d ago`;
 };
 
 async function workflowRows() {
@@ -58,78 +58,73 @@ async function freshnessRows() {
       const m = /(?:"generatedAt":|[A-Za-z]*[Gg]eneratedAt\s*=)\s*"(\d{4}-\d{2}-\d{2})/.exec(t);
       if (!m) { out.push({ subject: `${file} (no stamp)`, state: "BROKEN", verified: "unknown" }); continue; }
       const days = Math.floor((Date.now() - Date.parse(m[1])) / 864e5);
-      // Amber at 70% of the deadline: the whole point is to see rot coming.
+      // Amber at 70% of the deadline: the point is to see rot coming, not to
+      // find out about it on the day it lands.
       const state = days > sla ? "BROKEN" : days > sla * 0.7 ? "DEGRADED" : "OK";
-      out.push({ subject: `${file}`, state, verified: `${days}d / ${sla}d` });
+      out.push({ subject: file, state, verified: `${days}d of ${sla}d` });
     } catch { /* keep going */ }
   }
   return out;
 }
 
-const T = {
-  dark: { bg: "#0d1117", panel: "#161b22", fg: "#e6edf3", dim: "#7d8590", line: "#21262d",
-          ok: "#3fb950", warn: "#d29922", bad: "#f85149", accent: "#a371f7" },
-  light: { bg: "#ffffff", panel: "#f6f8fa", fg: "#1f2328", dim: "#59636e", line: "#d1d9e0",
-           ok: "#1a7f37", warn: "#9a6700", bad: "#cf222e", accent: "#7F52FF" },
-};
+const ROW = 21;
 
-function svg(groups, loop, t, stamp) {
-  const W = 900, ROW = 21, PADX = 22;
-  const headerH = 96;
-  let y = headerH;
-  const body = [];
-
-  for (const g of groups) {
-    body.push(`<text x="${PADX}" y="${y + 12}" class="h">${g.title}</text>`);
-    y += 26;
-    for (const r of g.rows) {
-      const c = r.state === "OK" ? t.ok : r.state === "DEGRADED" ? t.warn : r.state === "RUNNING" ? t.dim : t.bad;
-      // Only BROKEN breathes. One moving dot in a still field reads as
-      // instrumentation; six moving things read as a screensaver.
-      const led = r.state === "BROKEN"
-        ? `<circle cx="${PADX + 5}" cy="${y + 6}" r="4" fill="${c}" class="pulse"/>`
-        : `<circle cx="${PADX + 5}" cy="${y + 6}" r="4" fill="${c}"/>`;
-      body.push(
-        led +
-        `<text x="${PADX + 20}" y="${y + 10}" class="s">${r.subject}</text>` +
-        `<text x="${W - 200}" y="${y + 10}" class="st" fill="${c}">${r.state}</text>` +
-        `<text x="${W - PADX}" y="${y + 10}" class="v">${r.verified}</text>`,
-      );
-      y += ROW;
-    }
-    y += 12;
-  }
-  const Hh = y + 26;
-
-  const loopCells = loop.map((l, i) => {
-    const x = PADX + i * 168;
-    return `<text x="${x}" y="62" class="lk">${l.k}</text><text x="${x}" y="82" class="lv">${l.v}</text>`;
+/**
+ * One row: LED, subject, then a right rail of STATE and AGE.
+ *
+ * The rail is fixed and right-aligned so the eye runs straight down it instead
+ * of hunting across ragged text, and the subject is measured and truncated
+ * against the space actually left rather than a guessed character count.
+ */
+function rows(items, t, y0) {
+  const AGE_X = W - PAD, STATE_X = W - PAD - 104;
+  const subjectMax = STATE_X - (PAD + 20) - 90;
+  return items.map((r, i) => {
+    const y = y0 + i * ROW;
+    const c = r.state === "OK" ? t.ok : r.state === "DEGRADED" ? t.warn : r.state === "RUNNING" ? t.idle : t.bad;
+    const cls = r.state === "BROKEN" ? ' class="pulse"' : "";
+    return `<circle cx="${PAD + 5}" cy="${y + 6}" r="4" fill="${c}"${cls}/>`
+      + `<text x="${PAD + 20}" y="${y + 10}" class="row">${esc(fit(r.subject, subjectMax, S.row))}</text>`
+      + `<text x="${STATE_X}" y="${y + 10}" class="meta" fill="${c}" font-weight="700">${esc(r.state)}</text>`
+      + `<text x="${AGE_X}" y="${y + 10}" class="meta end">${esc(r.verified)}</text>`;
   }).join("");
+}
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${Hh}" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="Live status board: every generated dataset and scheduled job behind this profile, with its state and age">
-<style>
-  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .t{font-size:15px;font-weight:700;fill:${t.fg}}
-  .sub{font-size:11px;fill:${t.dim}}
-  .h{font-size:10px;font-weight:700;fill:${t.dim};letter-spacing:.12em}
-  .s{font-size:11.5px;fill:${t.fg}}
-  .st{font-size:10.5px;font-weight:700;letter-spacing:.06em}
-  .v{font-size:10.5px;fill:${t.dim};text-anchor:end}
-  .lk{font-size:9px;fill:${t.dim};letter-spacing:.14em}
-  .lv{font-size:17px;font-weight:700;fill:${t.accent}}
-  .f{font-size:9.5px;fill:${t.dim}}
-  .pulse{animation:p 1.6s ease-in-out infinite}
-  @keyframes p{0%,100%{opacity:1}50%{opacity:.25}}
-</style>
-<rect width="${W}" height="${Hh}" rx="8" fill="${t.bg}"/>
-<rect x="0" y="0" width="${W}" height="${headerH - 8}" fill="${t.panel}"/>
-<text x="${PADX}" y="26" class="t">Is any of this still true?</text>
-<text x="${PADX}" y="42" class="sub">Every generated dataset and scheduled job behind this profile. Amber means passing, and aging out.</text>
-${loopCells}
-<line x1="0" y1="${headerH - 8}" x2="${W}" y2="${headerH - 8}" stroke="${t.line}"/>
-${body.join("")}
-<text x="${PADX}" y="${Hh - 9}" class="f">Generated ${stamp} by scripts/gen-ops-board.mjs. States are read live from the GitHub API and from each file's own generatedAt stamp.</text>
-</svg>`;
+function svg(groups, stats, t, stamp) {
+  const h = header({
+    t,
+    title: "Is any of this still true?",
+    subtitle: "Every scheduled job and generated dataset behind this profile, with its age against its deadline. Amber means passing, and aging out.",
+    stats,
+  });
+  let y = h.height + 24;
+  const body = [];
+  for (const g of groups) {
+    body.push(`<text x="${PAD}" y="${y}" class="group">${esc(g.title)}</text>`);
+    y += 13;
+    body.push(rows(g.rows, t, y));
+    y += g.rows.length * ROW + 20;
+  }
+
+  // The three states, named once. Without this the reader has to infer what
+  // amber means, and amber is the entire argument.
+  const leg = [["OK", t.ok, "passing"], ["DEGRADED", t.warn, "passing, past 70% of its deadline"], ["BROKEN", t.bad, "failed, or past its deadline"]];
+  let lx = PAD;
+  const legend = leg.map(([k, c, d]) => {
+    const kw = k.length * S.meta * 0.612, dw = d.length * S.meta * 0.612;
+    const seg = `<circle cx="${lx + 4}" cy="${y - 4}" r="3.5" fill="${c}"/>`
+      + `<text x="${lx + 14}" y="${y}" class="meta" fill="${c}" font-weight="700">${k}</text>`
+      + `<text x="${lx + 14 + kw + 7}" y="${y}" class="meta">${esc(d)}</text>`;
+    lx += 14 + kw + 7 + dw + 24;
+    return seg;
+  }).join("");
+  y += 24;
+
+  const Hh = y + 14;
+  return open({ t, w: W, h: Hh, label: `Live status board: ${stats[0][1]} checks tracked, ${stats[2][1]} broken, ${stats[1][1]} degraded` })
+    + h.svg + body.join("") + legend
+    + footer({ t, text: `Generated ${stamp}. States read live from the GitHub API and from each file's own generatedAt stamp.`, y: Hh - 10 })
+    + close();
 }
 
 try {
@@ -141,19 +136,19 @@ try {
     const all = [...wf, ...fresh];
     const broken = all.filter((r) => r.state === "BROKEN").length;
     const degraded = all.filter((r) => r.state === "DEGRADED").length;
-    const loop = [
-      { k: "DETECT", v: String(all.length) },
-      { k: "DEGRADED", v: String(degraded) },
-      { k: "BROKEN", v: String(broken) },
-      { k: "GREEN", v: String(all.length - broken - degraded) },
-      { k: "SLA FLOOR", v: "21d" },
+    const stats = [
+      ["TRACKED", String(all.length)],
+      ["DEGRADED", String(degraded)],
+      ["BROKEN", String(broken)],
+      ["PASSING", String(all.length - broken - degraded)],
+      ["TIGHTEST SLA", "21d"],
     ];
     const groups = [
       { title: "PIPELINES", rows: wf },
-      { title: "GENERATED DATA, AGE AGAINST ITS SLA", rows: fresh },
+      { title: "GENERATED DATA, AGE AGAINST ITS DEADLINE", rows: fresh },
     ].filter((g) => g.rows.length);
     const stamp = new Date().toISOString().slice(0, 10);
-    for (const [name, t] of Object.entries(T)) writeFileSync(`assets/board-${name}.svg`, svg(groups, loop, t, stamp));
+    for (const t of Object.values(THEMES)) writeFileSync(`assets/board-${t.name}.svg`, svg(groups, stats, t, stamp));
     console.log(`[gen-ops-board] ${all.length} rows, ${broken} broken, ${degraded} degraded`);
   }
 } catch (err) {

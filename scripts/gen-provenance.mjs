@@ -14,6 +14,7 @@
 // the lesson files themselves. A lesson with no project is drawn as
 // unattributed rather than quietly dropped: a missing edge is information.
 import { writeFileSync } from "node:fs";
+import { THEMES, S, PAD, W, header, footer, open, close, esc, fit } from "./lib/panel.mjs";
 
 const SRC = "https://raw.githubusercontent.com/darkpandawarrior/the-loopdown/main/data/registry.json";
 
@@ -27,16 +28,19 @@ const HOME = {
   AgentHarness: "private",
 };
 
-const T = {
-  dark: { bg: "#0d1117", panel: "#161b22", fg: "#e6edf3", dim: "#7d8590", line: "#21262d", edge: "#30363d", accent: "#a371f7" },
-  light: { bg: "#ffffff", panel: "#f6f8fa", fg: "#1f2328", dim: "#59636e", line: "#d1d9e0", edge: "#d1d9e0", accent: "#7F52FF" },
-};
 const HUES = ["#a371f7", "#3fb950", "#d29922", "#58a6ff", "#f778ba", "#7d8590"];
-const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function svg(groups, total, t, stamp) {
-  const W = 900, PADX = 22, TOP = 92, ROW = 21, LX = PADX + 6, LW = 190, RX = PADX + 300;
-  let y = TOP;
+  const h = header({
+    t,
+    title: "Every lesson, and the system it came out of",
+    subtitle: `${total} written pieces, traced back to the code that produced them. Left is the system, right is what it taught, and the edges are the claim.`,
+    stats: groups.slice(0, 5).map((g) => [g.project.toUpperCase(), String(g.lessons.length)]),
+  });
+
+  const ROW = 21, LX = PAD + 4, LW = 178, RX = PAD + 286;
+  const titleMax = W - RX - PAD;
+  let y = h.height + 22;
   const nodes = [], edges = [], leaves = [];
 
   groups.forEach((g, gi) => {
@@ -44,44 +48,23 @@ function svg(groups, total, t, stamp) {
     const gy = y;
     g.lessons.forEach((l) => {
       const ly = y;
-      let title = l.title;
-      if (title.length > 68) title = title.slice(0, 67) + "…";
-      leaves.push(`<circle cx="${RX - 12}" cy="${ly + 6}" r="2.5" fill="${hue}"/>` +
-        `<text x="${RX}" y="${ly + 10}" class="ls">${esc(title)}</text>`);
-      // one curve per lesson, from the project node to its own row
-      edges.push(`<path d="M${LX + LW} ${gy + 6} C${LX + LW + 50} ${gy + 6} ${RX - 60} ${ly + 6} ${RX - 18} ${ly + 6}" fill="none" stroke="${hue}" stroke-opacity=".38" stroke-width="1"/>`);
+      leaves.push(`<circle cx="${RX - 13}" cy="${ly + 6}" r="2.5" fill="${hue}"/>`
+        + `<text x="${RX}" y="${ly + 10}" class="row">${esc(fit(l.title, titleMax, S.row))}</text>`);
+      edges.push(`<path d="M${LX + LW} ${gy + 7} C${LX + LW + 54} ${gy + 7} ${RX - 62} ${ly + 6} ${RX - 19} ${ly + 6}" fill="none" stroke="${hue}" stroke-opacity=".42" stroke-width="1"/>`);
       y += ROW;
     });
-    nodes.push(
-      `<rect x="${LX}" y="${gy}" width="${LW}" height="13" rx="3" fill="${hue}" fill-opacity=".14"/>` +
-      `<text x="${LX + 8}" y="${gy + 10}" class="pj" fill="${hue}">${esc(g.project)}</text>` +
-      `<text x="${LX + LW - 8}" y="${gy + 10}" class="cnt" fill="${hue}">${g.lessons.length}</text>` +
-      `<text x="${LX + 8}" y="${gy + 25}" class="src">${esc(HOME[g.project] || "")}</text>`,
-    );
-    y += 12;
+    nodes.push(`<rect x="${LX}" y="${gy}" width="${LW}" height="15" rx="3" fill="${hue}" fill-opacity=".15"/>`
+      + `<text x="${LX + 9}" y="${gy + 11}" class="meta" fill="${hue}" font-weight="700">${esc(fit(g.project, LW - 44, S.meta))}</text>`
+      + `<text x="${LX + LW - 9}" y="${gy + 11}" class="meta end" fill="${hue}" font-weight="700">${g.lessons.length}</text>`
+      + `<text x="${LX + 9}" y="${gy + 26}" class="foot">${esc(fit(HOME[g.project] || "", LW, S.foot))}</text>`);
+    y += 14;
   });
 
-  const H = y + 34;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Provenance: ${total} written lessons traced back to the production systems they came from">
-<style>
-  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .t{font-size:15px;font-weight:700;fill:${t.fg}}
-  .sub{font-size:11px;fill:${t.dim}}
-  .pj{font-size:11px;font-weight:700}
-  .cnt{font-size:10px;font-weight:700;text-anchor:end}
-  .src{font-size:9px;fill:${t.dim}}
-  .ls{font-size:10.5px;fill:${t.fg}}
-  .f{font-size:9.5px;fill:${t.dim}}
-</style>
-<rect width="${W}" height="${H}" rx="8" fill="${t.bg}"/>
-<rect x="0" y="0" width="${W}" height="${TOP - 16}" fill="${t.panel}"/>
-<text x="${PADX}" y="30" class="t">Every lesson, and the system it came out of</text>
-<text x="${PADX}" y="48" class="sub">${total} written pieces, traced back to the code that produced them. Ten out of one project is not a blog, it is a project worth writing down.</text>
-<text x="${PADX}" y="64" class="sub">Left is the system. Right is what it taught. The edges are the claim.</text>
-<line x1="0" y1="${TOP - 16}" x2="${W}" y2="${TOP - 16}" stroke="${t.line}"/>
-${edges.join("")}${nodes.join("")}${leaves.join("")}
-<text x="${PADX}" y="${H - 12}" class="f">Generated ${stamp} from the-loopdown registry.json, itself derived from the lesson files.</text>
-</svg>`;
+  const Hh = y + 16;
+  return open({ t, w: W, h: Hh, label: `Provenance: ${total} written lessons traced to the systems that produced them` })
+    + h.svg + edges.join("") + nodes.join("") + leaves.join("")
+    + footer({ t, text: `Generated ${stamp} from the-loopdown registry.json, itself derived from the lesson files.`, y: Hh - 10 })
+    + close();
 }
 
 try {
@@ -101,7 +84,7 @@ try {
     .sort((a, b) => b.lessons.length - a.lessons.length);
 
   const stamp = new Date().toISOString().slice(0, 10);
-  for (const [name, t] of Object.entries(T)) writeFileSync(`assets/provenance-${name}.svg`, svg(groups, lessons.length, t, stamp));
+  for (const t of Object.values(THEMES)) writeFileSync(`assets/provenance-${t.name}.svg`, svg(groups, lessons.length, t, stamp));
   console.log(`[gen-provenance] ${lessons.length} lessons across ${groups.length} systems`);
 } catch (err) {
   console.warn("[gen-provenance] fetch failed, leaving the committed SVGs alone,", err.message);

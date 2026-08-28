@@ -15,16 +15,11 @@
 // Fetch failure leaves the committed SVGs alone. Zero events exits 1, because a
 // ticker rendering empty says "nothing is happening", which is a claim.
 import { writeFileSync } from "node:fs";
+import { THEMES, S, PAD, W, header, footer, open, close, esc, fit } from "./lib/panel.mjs";
 
 const token = process.env.GITHUB_TOKEN;
 const H = { Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
 
-const T = {
-  dark: { bg: "#0d1117", panel: "#161b22", fg: "#e6edf3", dim: "#7d8590", line: "#21262d", accent: "#a371f7", live: "#3fb950" },
-  light: { bg: "#ffffff", panel: "#f6f8fa", fg: "#1f2328", dim: "#59636e", line: "#d1d9e0", accent: "#7F52FF", live: "#1a7f37" },
-};
-
-const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const ago = (d) => {
   const m = Math.floor((Date.now() - Date.parse(d)) / 6e4);
   if (m < 60) return `${m}m ago`;
@@ -33,36 +28,30 @@ const ago = (d) => {
 };
 
 function svg(rows, t, stamp, repoCount) {
-  const W = 900, PADX = 22, TOP = 78, ROW = 20;
-  const H = TOP + rows.length * ROW + 34;
+  const h = header({
+    t,
+    title: "Lately",
+    subtitle: `The most recent push in each of ${repoCount} repositories. Not a commit count: the actual subjects, so you can see what kind of work it is.`,
+  });
+  const ROW = 20, WHEN_X = PAD, REPO_X = PAD + 84, MSG_X = PAD + 262;
+  const msgMax = W - MSG_X - PAD;
+  let y = h.height + 20;
   const body = rows.map((r, i) => {
-    const y = TOP + i * ROW;
-    return `<text x="${PADX}" y="${y + 10}" class="when">${r.when}</text>` +
-      `<text x="${PADX + 78}" y="${y + 10}" class="repo">${esc(r.repo)}</text>` +
-      `<text x="${PADX + 250}" y="${y + 10}" class="msg">${esc(r.msg)}</text>`;
+    const yy = y + i * ROW;
+    return `<text x="${WHEN_X}" y="${yy + 10}" class="meta">${esc(r.when)}</text>`
+      + `<text x="${REPO_X}" y="${yy + 10}" class="row" fill="${t.accent}" font-weight="700">${esc(fit(r.repo, MSG_X - REPO_X - 12, S.row))}</text>`
+      + `<text x="${MSG_X}" y="${yy + 10}" class="row">${esc(fit(r.msg, msgMax, S.row))}</text>`;
   }).join("");
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Recent activity across ${repoCount} repositories, most recent first">
-<style>
-  text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .t{font-size:15px;font-weight:700;fill:${t.fg}}
-  .sub{font-size:11px;fill:${t.dim}}
-  .when{font-size:10.5px;fill:${t.dim}}
-  .repo{font-size:11px;font-weight:700;fill:${t.accent}}
-  .msg{font-size:11px;fill:${t.fg}}
-  .f{font-size:9.5px;fill:${t.dim}}
-  .dot{animation:b 2.4s ease-in-out infinite}
-  @keyframes b{0%,100%{opacity:1}50%{opacity:.3}}
-</style>
-<rect width="${W}" height="${H}" rx="8" fill="${t.bg}"/>
-<rect x="0" y="0" width="${W}" height="${TOP - 12}" fill="${t.panel}"/>
-<circle cx="${PADX + 5}" cy="24" r="4" fill="${t.live}" class="dot"/>
-<text x="${PADX + 18}" y="28" class="t">Lately</text>
-<text x="${PADX}" y="50" class="sub">The last ${rows.length} pushes across ${repoCount} repositories. Not a commit count: the actual subjects, so you can see what kind of work it is.</text>
-<line x1="0" y1="${TOP - 12}" x2="${W}" y2="${TOP - 12}" stroke="${t.line}"/>
-${body}
-<text x="${PADX}" y="${H - 12}" class="f">Generated ${stamp} from the public events feed.</text>
-</svg>`;
+  y += rows.length * ROW + 12;
+  const Hh = y + 14;
+  // A single breathing dot in the header, and nothing else moves. It is the one
+  // panel whose claim is "right now", so it earns the one live pixel.
+  return open({ t, w: W, h: Hh, label: `Recent activity across ${repoCount} repositories, most recent first` })
+    + h.svg
+    + `<circle cx="${W - PAD - 6}" cy="24" r="4" fill="${t.ok}" class="pulse"/>`
+    + body
+    + footer({ t, text: `Generated ${stamp} from the GitHub API, one commit per recently pushed repository.`, y: Hh - 10 })
+    + close();
 }
 
 const LOOK = 12;
@@ -91,7 +80,7 @@ try {
     process.exitCode = 1;
   } else {
     const stamp = new Date().toISOString().slice(0, 10);
-    for (const [name, t] of Object.entries(T)) writeFileSync(`assets/now-${name}.svg`, svg(rows, t, stamp, rows.length));
+    for (const t of Object.values(THEMES)) writeFileSync(`assets/now-${t.name}.svg`, svg(rows, t, stamp, rows.length));
     console.log(`[gen-now] ${rows.length} repos, newest ${rows[0].when}`);
   }
 } catch (err) {
