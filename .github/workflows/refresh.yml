@@ -34,6 +34,12 @@ jobs:
 
       # continue-on-error on each: one dead generator must not stop the others
       # from refreshing. The gate step below is what actually fails the run.
+      # First, because it is the one panel every visitor sees.
+      - name: Hero
+        id: hero
+        continue-on-error: true
+        run: node scripts/gen-hero.mjs
+
       - name: career-ops counts
         id: stats
         continue-on-error: true
@@ -113,7 +119,7 @@ jobs:
       # red square on a page nobody opens. One issue, reused, so a week of
       # failures is one thread and not seven.
       - name: Open an issue if any generator failed
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure' || steps.hero.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -129,6 +135,7 @@ jobs:
           | ticker | ${{ steps.now.outcome }} |
           | ledger | ${{ steps.ledger.outcome }} |
           | provenance | ${{ steps.prov.outcome }} |
+          | hero | ${{ steps.hero.outcome }} |
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -144,5 +151,5 @@ jobs:
           fi
 
       - name: Fail the run so the badge goes red
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure' || steps.hero.outcome == 'failure'
         run: exit 1

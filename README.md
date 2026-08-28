@@ -1,10 +1,11 @@
 <div align="center">
 
-<img src="assets/profile-banner.gif" alt="Siddharth Pandalai, Senior Android Engineer, Kotlin, Jetpack Compose, Kotlin Multiplatform" width="1000"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg" />
+  <img src="assets/hero-light.svg" alt="Siddharth Pandalai, Senior Android Engineer. Production work at Dice.tech, the Kotlin Multiplatform core extracted from it, the four apps that core carries, and what was published in the open." width="1000"/>
+</picture>
 
-# Siddharth Pandalai
-
-**Senior Android Engineer** at [Dice.tech](https://dice.tech/). I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
+At [Dice.tech](https://dice.tech/) I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
 
 [Portfolio](https://cv-siddharth.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
