@@ -46,6 +46,20 @@ jobs:
         continue-on-error: true
         run: node scripts/gen-fleet-chart.mjs
 
+      # The live board. Runs every time, because its whole job is to be current:
+      # a status board that is a day stale is worse than none.
+      - name: Live status board
+        id: board
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/gen-ops-board.mjs
+
+      - name: Four-lane activity strip
+        id: lanes
+        continue-on-error: true
+        run: node scripts/gen-lanes.mjs
+
       # Weekly: a module graph does not change daily, and this one makes ~40
       # requests. Mondays only, but it still runs on a manual dispatch.
       - name: kmp-toolkit dependency graph
@@ -77,7 +91,7 @@ jobs:
       # red square on a page nobody opens. One issue, reused, so a week of
       # failures is one thread and not seven.
       - name: Open an issue if any generator failed
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -88,6 +102,8 @@ jobs:
           | career-ops counts | ${{ steps.stats.outcome }} |
           | fleet chart | ${{ steps.fleet.outcome }} |
           | module graph | ${{ steps.graph.outcome }} |
+          | status board | ${{ steps.board.outcome }} |
+          | lane strip | ${{ steps.lanes.outcome }} |
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -103,5 +119,5 @@ jobs:
           fi
 
       - name: Fail the run so the badge goes red
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure'
         run: exit 1
