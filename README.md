@@ -29,7 +29,7 @@ has a deadline. If one dies, a job opens itself an issue and the badge goes red.
 The three panels after this one are that machinery, in public.
 
 <details>
-<summary><b>Is any of this still true?</b> &nbsp;·&nbsp; a live board of every job and dataset, with its age against its SLA</summary>
+<summary><b>Live status board</b> &nbsp;·&nbsp; 11 jobs and datasets tracked, each against its own deadline</summary>
 
 <br/>
 
@@ -38,15 +38,14 @@ The three panels after this one are that machinery, in public.
   <img src="assets/board-light.svg" alt="Live status board of every scheduled job and generated dataset, with state and age against its SLA" width="100%" />
 </picture>
 
-Green or red is what GitHub already gives you. Amber is the interesting state:
-passing, and quietly aging out. That is the failure this profile actually hit,
-so it is the one the board is built to show. Only BROKEN pulses; nothing else on
-the board ever moves.
+This profile has been red three times, and each time the tests stayed green.
+That is why the board grades against a deadline rather than a pass or fail, and
+why it is published rather than kept in a dashboard only I look at.
 
 </details>
 
 <details>
-<summary><b>What broke, and how long it stayed broken</b> &nbsp;·&nbsp; 7 incidents recorded, mean time to fix 1.1 days, worst 8</summary>
+<summary><b>Incident ledger</b> &nbsp;·&nbsp; 7 recorded, 0 open, mean time to fix 1.1 days, worst 8</summary>
 
 <br/>
 
@@ -55,10 +54,10 @@ the board ever moves.
   <img src="assets/ledger-light.svg" alt="Incident ledger: seven recorded incidents with cause, fix and days to resolution" width="100%" />
 </picture>
 
-A status board shows the present, which is easy to make green by choosing what
-to measure. The ledger is the half nobody publishes. It includes the eight days
-a daily job was red because a dash sweep silently killed a regex, and the day
-this profile was found to be understating its own open source by 15 PRs.
+Including the eight days a daily job was red because a dash sweep silently
+killed a regex, and the day this profile was caught reporting nine
+of its own merged pull requests when the real figure was twenty four. Publishing the mean time to fix is the only part of a
+status page that costs anything to be honest about.
 
 </details>
 
@@ -84,7 +83,7 @@ Nothing became a library until a second consumer needed the same logic.
 - [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template): the app shape the toolkit slots into, buildable on day one.
 
 <details>
-<summary><b>The graph, as the build file actually wires it</b> &nbsp;·&nbsp; 39 modules, 43 internal dependencies, layered by computed depth</summary>
+<summary><b>Dependency graph</b> &nbsp;·&nbsp; 39 modules, 43 internal edges, layered by computed depth</summary>
 
 <br/>
 
@@ -100,7 +99,7 @@ the architecture rather than a drawing of it.
 </details>
 
 <details>
-<summary><b>Where the writing comes from</b> &nbsp;·&nbsp; 17 lessons, traced back to the systems that produced them</summary>
+<summary><b>Writing provenance</b> &nbsp;·&nbsp; 17 lessons, ten of them out of a single project</summary>
 
 <br/>
 
@@ -128,7 +127,7 @@ One platform, seen at different layers. Depth is behind the links.
 | **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Kursi](https://github.com/darkpandawarrior/Kursi) | one war story, four platforms |
 
 <details>
-<summary><b>Everything else I maintain</b> &nbsp;·&nbsp; eight more repositories, one line each</summary>
+<summary><b>Everything else I maintain</b> &nbsp;·&nbsp; eight repositories, one line each</summary>
 
 <br/>
 

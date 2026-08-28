@@ -16,16 +16,13 @@
 // modules or no edges exits 1, because a graph that quietly renders as a row of
 // disconnected boxes is worse than no graph.
 import { writeFileSync } from "node:fs";
+import { THEMES, S, PAD, header, footer, open, close, esc, fit } from "./lib/panel.mjs";
 
 const REPO = "darkpandawarrior/kmp-toolkit";
 const RAW = `https://raw.githubusercontent.com/${REPO}/main`;
 const token = process.env.GITHUB_TOKEN;
 const headers = { Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
 
-const THEMES = {
-  light: { bg: "#ffffff", fg: "#1f2328", muted: "#59636e", edge: "#d1d9e0", node: "#f6f8fa", stroke: "#d1d9e0", hot: "#7F52FF", hotText: "#ffffff" },
-  dark: { bg: "#0d1117", fg: "#e6edf3", muted: "#9198a1", edge: "#30363d", node: "#161b22", stroke: "#30363d", hot: "#a371f7", hotText: "#0d1117" },
-};
 
 async function moduleList() {
   const res = await fetch(`${RAW}/settings.gradle.kts`);
@@ -131,9 +128,7 @@ try {
   } else {
     const layers = layerOf(nodes, edges);
     const stamp = new Date().toISOString().slice(0, 10);
-    for (const [name, t] of Object.entries(THEMES)) {
-      writeFileSync(`assets/modules-${name}.svg`, svg(nodes, edges, layers, t, stamp));
-    }
+    for (const t of Object.values(THEMES)) writeFileSync(`assets/modules-${t.name}.svg`, svg(nodes, edges, layers, t, stamp));
     console.log(`[gen-module-graph] ${nodes.length} modules, ${edges.length} edges, ${Math.max(...layers.values()) + 1} layers`);
   }
 } catch (err) {
