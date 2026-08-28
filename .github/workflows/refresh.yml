@@ -60,6 +60,28 @@ jobs:
         continue-on-error: true
         run: node scripts/gen-lanes.mjs
 
+      # The ticker is the one panel whose whole value is being current, so it
+      # runs every time and is cheap: 1 repo-list call plus one commit each.
+      - name: Lately ticker
+        id: now
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/gen-now.mjs
+
+      # No network: it renders data/incidents.json. It can still fail, and when
+      # it does it means the ledger itself is malformed, which matters more than
+      # most things on this page.
+      - name: Incident ledger
+        id: ledger
+        continue-on-error: true
+        run: node scripts/gen-ledger.mjs
+
+      - name: Writing provenance
+        id: prov
+        continue-on-error: true
+        run: node scripts/gen-provenance.mjs
+
       # Weekly: a module graph does not change daily, and this one makes ~40
       # requests. Mondays only, but it still runs on a manual dispatch.
       - name: kmp-toolkit dependency graph
@@ -78,7 +100,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets
+          git add README.md assets data
           if git diff --cached --quiet; then
             echo "Everything already current."
           else
@@ -91,7 +113,7 @@ jobs:
       # red square on a page nobody opens. One issue, reused, so a week of
       # failures is one thread and not seven.
       - name: Open an issue if any generator failed
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -104,6 +126,9 @@ jobs:
           | module graph | ${{ steps.graph.outcome }} |
           | status board | ${{ steps.board.outcome }} |
           | lane strip | ${{ steps.lanes.outcome }} |
+          | ticker | ${{ steps.now.outcome }} |
+          | ledger | ${{ steps.ledger.outcome }} |
+          | provenance | ${{ steps.prov.outcome }} |
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
@@ -119,5 +144,5 @@ jobs:
           fi
 
       - name: Fail the run so the badge goes red
-        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure'
+        if: steps.stats.outcome == 'failure' || steps.fleet.outcome == 'failure' || steps.graph.outcome == 'failure' || steps.board.outcome == 'failure' || steps.lanes.outcome == 'failure' || steps.now.outcome == 'failure' || steps.ledger.outcome == 'failure' || steps.prov.outcome == 'failure'
         run: exit 1
