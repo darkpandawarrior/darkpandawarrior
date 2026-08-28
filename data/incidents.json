@@ -1,0 +1,82 @@
+{
+  "_": "Real incidents on the systems behind this profile. Every one is checkable: the dates come from workflow runs, generatedAt stamps and git history. Add an entry when something breaks, close it when it is fixed. Nothing speculative belongs here.",
+  "incidents": [
+    {
+      "id": "refresh-media-dead-regex",
+      "title": "Daily refresh red for 8 days, one dead regex",
+      "detected": "2026-08-20",
+      "resolved": "2026-08-28",
+      "severity": "high",
+      "surface": "cv-siddharth/Refresh project media",
+      "cause": "A dash sweep turned 'HireSignal - active' into 'HireSignal: active' and the generator's regex hard-coded the punctuation. It exited 1 every day, and because the commit step was gated on success, 26 healthy generators were discarded with it.",
+      "fix": "Match the number beside the phrase, never the punctuation between the words. Commit step now runs on always().",
+      "evidence": "https://github.com/darkpandawarrior/cv-siddharth/pull/51"
+    },
+    {
+      "id": "store-invisible-to-alarm",
+      "title": "The freshness alarm could not see the largest generated file",
+      "detected": "2026-08-28",
+      "resolved": "2026-08-28",
+      "severity": "high",
+      "surface": "cv-siddharth/src/data/store.ts",
+      "cause": "The scanner matched one stamp shape. store.ts emits a TypeScript const instead of the JSON-ish key, so 5,150 lines sat 21 days old and completely outside the alarm's view, with the suite green.",
+      "fix": "Match both shapes, then pin store.ts in MUST_BE_STAMPED so it cannot fall out again.",
+      "evidence": "https://github.com/darkpandawarrior/cv-siddharth/pull/51"
+    },
+    {
+      "id": "chessdeep-stale-29d",
+      "title": "chessDeep.ts reached 29 days stale under a 45-day alarm",
+      "detected": "2026-08-28",
+      "resolved": "2026-08-28",
+      "severity": "medium",
+      "surface": "cv-siddharth/src/data/chessDeep.ts",
+      "cause": "Not a dead generator. The daily job never reached it, because an earlier step exited non-zero. One blanket threshold tuned for the slowest source gave every other file weeks of legal silence.",
+      "fix": "Per-file SLAs. Live daily sources get 21 days; the rate-limited Play sweep keeps 45.",
+      "evidence": "https://github.com/darkpandawarrior/cv-siddharth/pull/51"
+    },
+    {
+      "id": "profile-understated-oss",
+      "title": "The profile understated its own open source by 15 PRs",
+      "detected": "2026-08-28",
+      "resolved": "2026-08-28",
+      "severity": "high",
+      "surface": "darkpandawarrior/README.md",
+      "cause": "The generator queried the private product repo while the sentence it maintains is about the public upstream. The request 422'd, the catch swallowed it, and the README sat at 9 merged PRs against a real 24.",
+      "fix": "Read the public upstream, the same repo the portfolio reads. A fetch failure is still swallowed; a dead pattern now exits 1.",
+      "evidence": "https://github.com/darkpandawarrior/darkpandawarrior/pull/5"
+    },
+    {
+      "id": "zero-metrics-in-html",
+      "title": "The homepage told every machine reader the platform served zero users",
+      "detected": "2026-08-28",
+      "resolved": "2026-08-28",
+      "severity": "critical",
+      "surface": "cv-siddharth/",
+      "cause": "The metric tile rendered a zero placeholder as its initial text and only reached the real figure through a count-up. Anything reading HTML without running it, an LLM screener, an ATS parser, a crawler, read 0k+ monthly active users.",
+      "fix": "Ship the real value in the markup and zero the node at effect time instead. Guarded by a renderToStaticMarkup test.",
+      "evidence": "https://github.com/darkpandawarrior/cv-siddharth/pull/51"
+    },
+    {
+      "id": "kmp-toolkit-count-stale",
+      "title": "kmp-toolkit's module count was stale by three, and self-contradictory",
+      "detected": "2026-08-28",
+      "resolved": "2026-08-28",
+      "severity": "medium",
+      "surface": "kmp-toolkit/README.md",
+      "cause": "36 was right when there were 17 core modules. Three more landed and nothing re-measured. The same README already said 39 further down. No claim covered the number, so a passing audit never looked.",
+      "fix": "Corrected on 8 surfaces and covered by a kmp-toolkit-modules claim, measured the same way as its siblings.",
+      "evidence": "https://github.com/darkpandawarrior/kmp-toolkit/pull/30"
+    },
+    {
+      "id": "generators-aged-out-quietly",
+      "title": "Two datasets aged out while a daily job reported success",
+      "detected": "2026-08-24",
+      "resolved": "2026-08-24",
+      "severity": "medium",
+      "surface": "cv-siddharth/src/data",
+      "cause": "Every generator keeps the previous file on a fetch error, which is right, and means a broken source looks identical to a quiet one. chessDeep.ts was 25 days old and weeb.ts 19, with the job green throughout.",
+      "fix": "freshness.test.ts: assert an age on anything that stamps itself, and pin the files that must carry a stamp.",
+      "evidence": "https://github.com/darkpandawarrior/cv-siddharth/blob/main/src/data/freshness.test.ts"
+    }
+  ]
+}

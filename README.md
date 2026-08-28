@@ -8,6 +8,8 @@
 
 [Portfolio](https://cv-siddharth.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
+**80%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
+
 </div>
 
 <picture>
@@ -15,23 +17,50 @@
   <img src="assets/lanes-light.svg" alt="Four lanes of activity by month since 2019: work delivered, open source merged, writing published, chess played" width="100%" />
 </picture>
 
-> **80%** crash reduction &nbsp;·&nbsp; GPS accuracy **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer migrated to Compose &nbsp;·&nbsp; AES-256 Keystore and SSL pinning across **9 domains**, cleared for VAPT and banking review.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/now-dark.svg" />
+  <img src="assets/now-light.svg" alt="The most recent push in each of twelve repositories, with commit subjects" width="100%" />
+</picture>
 
-## Is any of this still true?
+---
 
-Anyone can put numbers on a page. The harder question is whether they are still
-being maintained, and this board answers it in public. It reads live from the
-GitHub API and from each generated file's own timestamp. Amber is the whole
-point: passing, and quietly aging out.
+Everything below is drawn by a generator from a real source, and every generator
+has a deadline. If one dies, a job opens itself an issue and the badge goes red.
+The three panels after this one are that machinery, in public.
+
+<details>
+<summary><b>Is any of this still true?</b> &nbsp;·&nbsp; a live board of every job and dataset, with its age against its SLA</summary>
+
+<br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/board-dark.svg" />
-  <img src="assets/board-light.svg" alt="Live status board of every scheduled job and generated dataset behind this profile, with state and age against its SLA" width="100%" />
+  <img src="assets/board-light.svg" alt="Live status board of every scheduled job and generated dataset, with state and age against its SLA" width="100%" />
 </picture>
 
-If a generator here dies, the job opens itself an issue and the badge goes red.
-That is not decoration: in August 2026 this exact pipeline failed for eight days
-straight while every test stayed green, which is why the board exists.
+Green or red is what GitHub already gives you. Amber is the interesting state:
+passing, and quietly aging out. That is the failure this profile actually hit,
+so it is the one the board is built to show. Only BROKEN pulses; nothing else on
+the board ever moves.
+
+</details>
+
+<details>
+<summary><b>What broke, and how long it stayed broken</b> &nbsp;·&nbsp; 7 incidents recorded, mean time to fix 1.1 days, worst 8</summary>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/ledger-dark.svg" />
+  <img src="assets/ledger-light.svg" alt="Incident ledger: seven recorded incidents with cause, fix and days to resolution" width="100%" />
+</picture>
+
+A status board shows the present, which is easy to make green by choosing what
+to measure. The ledger is the half nobody publishes. It includes the eight days
+a daily job was red because a dash sweep silently killed a regex, and the day
+this profile was found to be understating its own open source by 15 PRs.
+
+</details>
 
 ## The fleet I shipped
 
@@ -46,20 +75,45 @@ interesting number is not the total, it is the shape: apps launched under that
 system are still being updated years later. [See the fleet](https://cv-siddharth.vercel.app/shipped),
 checked against the Play Store and Internet Archive crawls rather than memory.
 
-## The KMP family, as the build file wires it
+## The KMP family
+
+Nothing became a library until a second consumer needed the same logic.
+
+- [**kmp-toolkit**](https://github.com/darkpandawarrior/kmp-toolkit): 39 modules. Typed `Result`, an MVI core, an offline-first store, network, security, on-device AI behind one seam, a 19-provider payment abstraction. MIT.
+- [**kmp-build-logic**](https://github.com/darkpandawarrior/kmp-build-logic): 22 authored convention plugins, vendored by `includeBuild` across five repos, so a version bump happens once.
+- [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template): the app shape the toolkit slots into, buildable on day one.
+
+<details>
+<summary><b>The graph, as the build file actually wires it</b> &nbsp;·&nbsp; 39 modules, 43 internal dependencies, layered by computed depth</summary>
+
+<br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/modules-dark.svg" />
   <img src="assets/modules-light.svg" alt="kmp-toolkit dependency graph: 39 modules and 43 internal dependencies, laid out by computed dependency depth" width="100%" />
 </picture>
 
-Parsed from `settings.gradle.kts` and each module's build file, with columns
-computed by dependency depth, so it shows the architecture rather than a drawing
-of it. Nothing became a library until a second consumer needed the same logic.
+Parsed from `settings.gradle.kts` and each module's build file. The columns are
+dependency depth computed from the edges, so the layering is a measurement of
+the architecture rather than a drawing of it.
 
-- [**kmp-toolkit**](https://github.com/darkpandawarrior/kmp-toolkit): 39 modules. Typed `Result`, an MVI core, an offline-first store, network, security, on-device AI behind one seam, a 19-provider payment abstraction. MIT.
-- [**kmp-build-logic**](https://github.com/darkpandawarrior/kmp-build-logic): 22 authored convention plugins, vendored by `includeBuild` across five repos, so a version bump happens once.
-- [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template): the app shape the toolkit slots into, buildable on day one.
+</details>
+
+<details>
+<summary><b>Where the writing comes from</b> &nbsp;·&nbsp; 17 lessons, traced back to the systems that produced them</summary>
+
+<br/>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/provenance-dark.svg" />
+  <img src="assets/provenance-light.svg" alt="Provenance graph: 17 written lessons traced back to the production systems they came from" width="100%" />
+</picture>
+
+"Engineer who writes" is a claim anyone can make. The edge is the interesting
+part: ten of these came out of Mileway alone. That is not a blog, it is one
+project that produced ten things worth writing down.
+
+</details>
 
 ## What I do
 
@@ -73,7 +127,10 @@ One platform, seen at different layers. Depth is behind the links.
 | **Tooling** | The generators that draw this page, and the guards that fail when their data ages | every figure machine-checked |
 | **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Kursi](https://github.com/darkpandawarrior/Kursi) | one war story, four platforms |
 
-## Everything else
+<details>
+<summary><b>Everything else I maintain</b> &nbsp;·&nbsp; eight more repositories, one line each</summary>
+
+<br/>
 
 | Repo | What it is | Its number |
 |---|---|---|
@@ -85,6 +142,8 @@ One platform, seen at different layers. Depth is behind the links.
 | **HireSignal** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
 | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
+
+</details>
 
 ## Open source
 
