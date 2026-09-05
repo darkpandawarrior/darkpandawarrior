@@ -55,7 +55,7 @@ function svg(d, t, stamp) {
   const stages = [
     { k: "PRODUCTION", title: "Dice.tech", lines: [`${DICE.loc} LOC, ${DICE.kotlin} Kotlin`, `${DICE.mau} monthly actives`, `${DICE.compose} of the UI on Compose`] },
     { k: "EXTRACTED", title: "kmp-toolkit", lines: [`${d.modules} modules`, `${d.plugins} convention plugins`, "extracted on second use"] },
-    { k: "REUSED", title: "four apps", lines: ["Mileway, PaymentsLab", "Kursi, app-template", "Android, iOS, Desktop, Web"] },
+    { k: "REUSED", title: "four apps", lines: ["Doori, PaymentsLab-KMP", "Gaddi, app-template", "Android, iOS, Desktop, Web"] },
     { k: "PUBLISHED", title: "in the open", lines: [`${d.fleet} client apps shipped`, `${d.live} still live today`, `${d.lessons} lessons written up`] },
   ];
 
