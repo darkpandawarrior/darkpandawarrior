@@ -125,7 +125,7 @@ One platform, seen at different layers. Depth is behind the links.
 | **Platform ownership** | Jugnoo's white-label estate and the automation that shipped it | 173 apps on Play, 80% less delivery time |
 | **Libraries and build** | [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit), [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic), [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template) | 39 modules, 22 plugins |
 | **Tooling** | The generators that draw this page, and the guards that fail when their data ages | every figure machine-checked |
-| **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Kursi](https://github.com/darkpandawarrior/Kursi) | one war story, four platforms |
+| **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Gaddi](https://github.com/darkpandawarrior/Gaddi) | one war story, four platforms |
 
 <details>
 <summary><b>Everything else I maintain</b> &nbsp;·&nbsp; eight repositories, one line each</summary>
@@ -134,12 +134,12 @@ One platform, seen at different layers. Depth is behind the links.
 
 | Repo | What it is | Its number |
 |---|---|---|
-| [Mileway](https://github.com/darkpandawarrior/Mileway) | Mileage and trip tracking, offline-first, Ktor backend | 46 modules, 5 platforms |
-| [PaymentsLab](https://github.com/darkpandawarrior/PaymentsLab) | Every payment gateway behind one abstraction, each transaction's lifecycle visible | 40 modules |
-| [Kursi](https://github.com/darkpandawarrior/Kursi) | Bluffing card game, ISMCTS and LLM opponents on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
+| [Doori](https://github.com/darkpandawarrior/Doori) | Mileage and trip tracking, offline-first, Ktor backend | 46 modules, 5 platforms |
+| [PaymentsLab-KMP](https://github.com/darkpandawarrior/PaymentsLab-KMP) | Every payment gateway behind one abstraction, each transaction's lifecycle visible | 40 modules |
+| [Gaddi](https://github.com/darkpandawarrior/Gaddi) | Bluffing card game, ISMCTS and LLM opponents on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
 | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | 83 test files |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
-| **HireSignal** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
+| **Candidai** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
 | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
 
