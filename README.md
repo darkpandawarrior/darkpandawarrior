@@ -43,6 +43,10 @@ This profile has been red three times, and each time the tests stayed green.
 That is why the board grades against a deadline rather than a pass or fail, and
 why it is published rather than kept in a dashboard only I look at.
 
+A separate board tracks cv-siddharth's own generated datasets against their
+SLA: [/ops](https://cv-siddharth.vercel.app/ops). The two are not merged; this
+board watches the account, that one watches the portfolio repo.
+
 </details>
 
 <details>
@@ -137,7 +141,7 @@ One platform, seen at different layers. Depth is behind the links.
 | [Doori](https://github.com/darkpandawarrior/Doori) | Mileage and trip tracking, offline-first, Ktor backend | 46 modules, 5 platforms |
 | [PaymentsLab-KMP](https://github.com/darkpandawarrior/PaymentsLab-KMP) | Every payment gateway behind one abstraction, each transaction's lifecycle visible | 40 modules |
 | [Gaddi](https://github.com/darkpandawarrior/Gaddi) | Bluffing card game, ISMCTS and LLM opponents on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
-| [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | 83 test files |
+| [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | test count gated, not hand-typed |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
 | **Candidai** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
 | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
