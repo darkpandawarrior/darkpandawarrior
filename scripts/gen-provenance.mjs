@@ -5,7 +5,7 @@
 // interesting version of the claim is the edge: each lesson traces back to a
 // specific production system, and most of them trace back to the same one.
 //
-// That shape is the argument. Ten lessons out of Mileway is not a blog, it is a
+// That shape is the argument. Ten lessons out of Doori is not a blog, it is a
 // project that generated ten things worth writing down, which is what real
 // engineering looks like from the outside. This draws the edges rather than
 // asserting them.
@@ -19,10 +19,13 @@ import { THEMES, S, PAD, W, header, footer, open, close, esc, fit } from "./lib/
 const SRC = "https://raw.githubusercontent.com/darkpandawarrior/the-loopdown/main/data/registry.json";
 
 // Where each project actually lives, so every node on the left is a real link.
+// Keyed by the project name registry.json emits post-rename (2026-09-05):
+// Mileway/PaymentsLab/Kursi -> Doori/PaymentsLab-KMP/Gaddi. A stale key here
+// means HOME[g.project] misses and the node renders with no home link at all.
 const HOME = {
-  Mileway: "github.com/darkpandawarrior/Mileway",
-  PaymentsLab: "github.com/darkpandawarrior/PaymentsLab",
-  Kursi: "github.com/darkpandawarrior/Kursi",
+  Doori: "github.com/darkpandawarrior/Doori",
+  "PaymentsLab-KMP": "github.com/darkpandawarrior/PaymentsLab-KMP",
+  Gaddi: "github.com/darkpandawarrior/Gaddi",
   "The Loopdown": "github.com/darkpandawarrior/the-loopdown",
   Dice: "production, private",
   AgentHarness: "private",

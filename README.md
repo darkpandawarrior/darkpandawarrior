@@ -7,7 +7,7 @@
 
 At [Dice.tech](https://dice.tech/) I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
 
-[Portfolio](https://cv-siddharth.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
+[Portfolio](https://cv-siddharth.vercel.app) (also served at [siddharth-pandalai.vercel.app](https://siddharth-pandalai.vercel.app)) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
 **80%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
 
@@ -83,18 +83,18 @@ checked against the Play Store and Internet Archive crawls rather than memory.
 
 Nothing became a library until a second consumer needed the same logic.
 
-- [**kmp-toolkit**](https://github.com/darkpandawarrior/kmp-toolkit): 39 modules. Typed `Result`, an MVI core, an offline-first store, network, security, on-device AI behind one seam, a 19-provider payment abstraction. MIT.
-- [**kmp-build-logic**](https://github.com/darkpandawarrior/kmp-build-logic): 22 authored convention plugins, vendored by `includeBuild` across five repos, so a version bump happens once.
+- [**kmp-toolkit**](https://github.com/darkpandawarrior/kmp-toolkit): 40 modules. Typed `Result`, an MVI core, an offline-first store, network, security, on-device AI behind one seam, a 19-provider payment abstraction. MIT.
+- [**kmp-build-logic**](https://github.com/darkpandawarrior/kmp-build-logic): 17 authored convention plugins, vendored by `includeBuild` across five repos, so a version bump happens once.
 - [**kmp-app-template**](https://github.com/darkpandawarrior/kmp-app-template): the app shape the toolkit slots into, buildable on day one.
 
 <details>
-<summary><b>Dependency graph</b> &nbsp;·&nbsp; 39 modules, 43 internal edges, layered by computed depth</summary>
+<summary><b>Dependency graph</b> &nbsp;·&nbsp; 40 modules, 55 internal edges, layered by computed depth</summary>
 
 <br/>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/modules-dark.svg" />
-  <img src="assets/modules-light.svg" alt="kmp-toolkit dependency graph: 39 modules and 43 internal dependencies, laid out by computed dependency depth" width="100%" />
+  <img src="assets/modules-light.svg" alt="kmp-toolkit dependency graph: 40 modules and 55 internal dependencies, laid out by computed dependency depth" width="100%" />
 </picture>
 
 Parsed from `settings.gradle.kts` and each module's build file. The columns are
@@ -114,7 +114,7 @@ the architecture rather than a drawing of it.
 </picture>
 
 "Engineer who writes" is a claim anyone can make. The edge is the interesting
-part: ten of these came out of Mileway alone. That is not a blog, it is one
+part: ten of these came out of Doori alone. That is not a blog, it is one
 project that produced ten things worth writing down.
 
 </details>
@@ -127,7 +127,7 @@ One platform, seen at different layers. Depth is behind the links.
 |---|---|---|
 | **Android at scale** | Dice platform: GPS pipeline, Compose migration, crash and concurrency work, security hardening | 50k MAU, 80% fewer crashes |
 | **Platform ownership** | Jugnoo's white-label estate and the automation that shipped it | 173 apps on Play, 80% less delivery time |
-| **Libraries and build** | [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit), [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic), [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template) | 39 modules, 22 plugins |
+| **Libraries and build** | [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit), [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic), [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template) | 40 modules, 17 plugins |
 | **Tooling** | The generators that draw this page, and the guards that fail when their data ages | every figure machine-checked |
 | **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Gaddi](https://github.com/darkpandawarrior/Gaddi) | one war story, four platforms |
 
@@ -143,7 +143,7 @@ One platform, seen at different layers. Depth is behind the links.
 | [Gaddi](https://github.com/darkpandawarrior/Gaddi) | Bluffing card game, ISMCTS and LLM opponents on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
 | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | test count gated, not hand-typed |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
-| **Candidai** [(case study)](https://cv-siddharth.vercel.app/project/hiresignal) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (81 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/santifer/career-ops) engine. Private while v1 lands | case study is public |
+| **Candidai** [(case study)](https://cv-siddharth.vercel.app/project/candidai) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (87 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/career-ops-hq/career-ops) engine. Private while v1 lands | case study is public |
 | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
 
@@ -151,9 +151,9 @@ One platform, seen at different layers. Depth is behind the links.
 
 ## Open source
 
-**24 merged PRs** to [career-ops](https://github.com/santifer/career-ops) (⭐68k+): two new ATS providers ([BambooHR](https://github.com/santifer/career-ops/pull/1141), [Breezy HR](https://github.com/santifer/career-ops/pull/1185)), a [dashboard status-cell fix](https://github.com/santifer/career-ops/pull/1186) and an [agent-inbox feature](https://github.com/santifer/career-ops/pull/1472).
+**24 merged PRs** to [career-ops](https://github.com/career-ops-hq/career-ops) (⭐70k+): two new ATS providers ([BambooHR](https://github.com/career-ops-hq/career-ops/pull/1141), [Breezy HR](https://github.com/career-ops-hq/career-ops/pull/1185)), a [dashboard status-cell fix](https://github.com/career-ops-hq/career-ops/pull/1186) and an [agent-inbox feature](https://github.com/career-ops-hq/career-ops/pull/1472).
 
-Most of the rest are correctness fixes, each with a reproduction and a regression test, and each the same class of bug: code that reports success while doing the wrong thing. Non-Latin company names [collapsing into one and deleting a tracked application](https://github.com/santifer/career-ops/pull/2587). `$`-patterns in CV text [splicing the template into the resume](https://github.com/santifer/career-ops/pull/2588) at exit 0. A date filter [silently ignored in its `--flag=value` form](https://github.com/santifer/career-ops/pull/2589).
+Most of the rest are correctness fixes, each with a reproduction and a regression test, and each the same class of bug: code that reports success while doing the wrong thing. Non-Latin company names [collapsing into one and deleting a tracked application](https://github.com/career-ops-hq/career-ops/pull/2587). `$`-patterns in CV text [splicing the template into the resume](https://github.com/career-ops-hq/career-ops/pull/2588) at exit 0. A date filter [silently ignored in its `--flag=value` form](https://github.com/career-ops-hq/career-ops/pull/2589).
 
 **Stack:** Kotlin · Jetpack Compose · Compose Multiplatform · Coroutines and Flow · Koin and Hilt · Room and DataStore · Ktor · WorkManager · Gradle convention plugins
 **Architecture:** MVVM and Clean Architecture · MVI unidirectional state · offline-first · multi-module

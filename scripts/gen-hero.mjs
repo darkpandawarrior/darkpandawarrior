@@ -19,6 +19,7 @@ import { THEMES, PAD, esc, fit } from "./lib/panel.mjs";
 
 const RAWCV = "https://raw.githubusercontent.com/darkpandawarrior/cv-siddharth/main/src/data";
 const RAWKT = "https://raw.githubusercontent.com/darkpandawarrior/kmp-toolkit/main";
+const RAWBL = "https://raw.githubusercontent.com/darkpandawarrior/kmp-build-logic/main/convention/build.gradle.kts";
 const RAWLD = "https://raw.githubusercontent.com/darkpandawarrior/the-loopdown/main/data/registry.json";
 
 const W = 1000, H = 330;
@@ -30,10 +31,17 @@ const DICE = { loc: "964k", kotlin: "772k", mau: "50k+", compose: "~87%" };
 async function text(u) { const r = await fetch(u); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.text(); }
 
 async function live() {
-  const out = { modules: null, plugins: 22, fleet: null, live: null, lessons: null };
+  const out = { modules: null, plugins: null, fleet: null, live: null, lessons: null };
   try {
     const st = await text(`${RAWKT}/settings.gradle.kts`);
     out.modules = (st.match(/^\s*include\(/gm) || []).length;
+  } catch { /* leave null, guarded below */ }
+  try {
+    // Was a hardcoded 22 despite the footer claiming every count here is
+    // fetched: kmp-build-logic went to 17 convention plugins and this stayed
+    // 22, silently, the exact failure the rest of this file is built against.
+    const bl = await text(RAWBL);
+    out.plugins = (bl.match(/register\("/g) || []).length;
   } catch { /* leave null, guarded below */ }
   try {
     const store = await text(`${RAWCV}/store.ts`);

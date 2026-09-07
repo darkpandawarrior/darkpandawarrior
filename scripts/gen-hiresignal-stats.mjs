@@ -22,7 +22,12 @@ import { readFileSync, writeFileSync } from "node:fs";
 // The PUBLIC upstream. This is the repo the README's sentence is about, and it
 // is the same one cv-siddharth's copy of this generator reads, so the two
 // surfaces cannot disagree.
-const UPSTREAM = "santifer/career-ops";
+//
+// santifer/career-ops moved to the career-ops-hq org (the web URL 301s, but
+// the search API does not follow that redirect, so the old path 422s here
+// silently caught as a "fetch failure" — a dead pattern wearing a network
+// blip's clothes, same shape as the kirklazar-android/hiresignal miss above).
+const UPSTREAM = "career-ops-hq/career-ops";
 
 const token = process.env.GITHUB_TOKEN;
 const headers = { Accept: "application/vnd.github+json", ...(token ? { Authorization: `Bearer ${token}` } : {}) };
@@ -69,8 +74,8 @@ try {
   // pattern in cv-siddharth, and it took eight days of red CI to find.
   sub(/\*\*\d+ merged PRs\*\*/g, `**${prs} merged PRs**`);
   sub(/reverse-ATS discovery \(\d+ providers\)/g, `reverse-ATS discovery (${providers} providers)`);
-  sub(/career-ops\]\(https:\/\/github\.com\/santifer\/career-ops\) \(⭐[\d.]+k\+\)/g,
-      `career-ops](https://github.com/santifer/career-ops) (⭐${starLabel})`);
+  sub(/career-ops\]\(https:\/\/github\.com\/(?:santifer|career-ops-hq)\/career-ops\) \(⭐[\d.]+k\+\)/g,
+      `career-ops](https://github.com/${UPSTREAM}) (⭐${starLabel})`);
 
   writeFileSync("README.md", src);
 
