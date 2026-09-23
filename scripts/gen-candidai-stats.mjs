@@ -84,12 +84,12 @@ try {
     if (n !== String(prs)) misses.push(`stale count "${n} merged ..." in README.md`);
   }
 
-  console.log(`[gen-hiresignal-stats] prs=${prs} providers=${providers} stars=${starLabel}`);
+  console.log(`[gen-candidai-stats] prs=${prs} providers=${providers} stars=${starLabel}`);
   if (misses.length) {
-    console.error("[gen-hiresignal-stats] dead patterns / stale counts:");
+    console.error("[gen-candidai-stats] dead patterns / stale counts:");
     for (const m of misses) console.error(`  ${m}`);
     process.exitCode = 1;
   }
 } catch (err) {
-  console.warn("[gen-hiresignal-stats] fetch failed, leaving README.md untouched,", err.message);
+  console.warn("[gen-candidai-stats] fetch failed, leaving README.md untouched,", err.message);
 }
