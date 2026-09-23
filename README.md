@@ -70,7 +70,7 @@ status page that costs anything to be honest about.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/fleet-dark.svg" />
-  <img src="assets/fleet-light.svg" alt="White-label client apps by the year each last shipped: 89 still live and 84 delisted, out of 173 that reached the Play Store" width="100%" />
+  <img src="assets/fleet-light.svg" alt="Bar chart of white-label client apps by last shipped year, split between apps still listed on Play and those now delisted" width="100%" />
 </picture>
 
 At Jugnoo I built the per-tenant flavour system, one build config and one set of
@@ -126,7 +126,7 @@ One platform, seen at different layers. Depth is behind the links.
 | Lane | The proof | The number |
 |---|---|---|
 | **Android at scale** | Dice platform: GPS pipeline, Compose migration, crash and concurrency work, security hardening | 50k MAU, 80% fewer crashes |
-| **Platform ownership** | Jugnoo's white-label estate and the automation that shipped it | 173 apps on Play, 80% less delivery time |
+| **Platform ownership** | Jugnoo's white-label estate and the automation that shipped it | Play Store fleet, 80% less delivery time |
 | **Libraries and build** | [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit), [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic), [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template) | 40 modules, 17 plugins |
 | **Tooling** | The generators that draw this page, and the guards that fail when their data ages | every figure machine-checked |
 | **Writing and games** | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown), [Gaddi](https://github.com/darkpandawarrior/Gaddi) | one war story, four platforms |

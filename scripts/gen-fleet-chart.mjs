@@ -1,18 +1,16 @@
 // Draws the white-label fleet as a lifecycle, not a total.
 //
-// The number usually quoted is "173 client apps shipped", which is true and
-// says almost nothing: it cannot tell you whether the platform was a burst of
+// A total alone says almost nothing: it cannot tell you whether the platform was a burst of
 // launches that died, or something that kept apps alive. The distribution can.
 // Live versus delisted by year is the shape of platform ownership, and it is
 // the one image on this profile that no other developer could produce, because
-// the underlying data was mined from 1,747 white-label branches across two
-// Jugnoo Android repos.
+// the underlying data was mined from white-label branches across two Jugnoo
+// Android repos.
 //
 // Source of truth is cv-siddharth's store.ts, which is public, so this reads the
 // same numbers the case study prints rather than keeping a second copy that can
-// drift. Fetch failure leaves the committed SVGs alone. A parse failure is a
-// repo bug and exits 1, because a silently-empty chart is the failure mode this
-// whole pass exists to remove.
+// drift. Fetch or parse failure leaves the committed SVGs alone and fails the
+// refresh workflow, so a stale chart does not pass silently.
 import { writeFileSync } from "node:fs";
 import { THEMES, PAD, W as PW, header, footer, open, close } from "./lib/panel.mjs";
 
@@ -27,14 +25,14 @@ const SRC = "https://raw.githubusercontent.com/darkpandawarrior/cv-siddharth/mai
 // y=44, so they collided. Only rendering the thing showed it.
 const W = PW, PAD_L = 52, PAD_R = 24, PAD_B = 52;
 
-function svg(rows, t, stamp) {
+function svg(rows, stats, snapshot, t, stamp) {
   const totLive = rows.reduce((a, r) => a + r.live, 0);
   const totGone = rows.reduce((a, r) => a + r.gone, 0);
   const h = header({
     t,
     title: "The white-label fleet, by the year each app last shipped",
-    subtitle: `${totLive + totGone} client apps reached the Play Store from one codebase. ${totLive} are still listed today, across 47 companies. The shape is the point, not the total.`,
-    stats: [["REACHED PLAY", String(totLive + totGone)], ["STILL LIVE", String(totLive)], ["DELISTED", String(totGone)], ["COMPANIES", "47"]],
+    subtitle: `${totLive + totGone} client apps reached the Play Store from one codebase. ${totLive} are still listed today, across ${stats.clientsLive} companies. The shape is the point, not the total.`,
+    stats: [["REACHED PLAY", String(totLive + totGone)], ["STILL LIVE", String(totLive)], ["DELISTED", String(totGone)], ["COMPANIES", String(stats.clientsLive)]],
   });
   const PAD_T = h.height + 30;
   const H = PAD_T + 190 + PAD_B;
@@ -67,8 +65,9 @@ function svg(rows, t, stamp) {
     + `<text x="${lx - 78}" y="${PAD_T + plotH + 42}" class="meta">delisted (${totGone})</text>`;
 
   return open({ t, w: W, h: H, label: `White-label client apps by year, ${totLive} still live and ${totGone} delisted of ${totLive + totGone}` })
+    + `<metadata>Source: ${SRC}; storeGeneratedAt: ${snapshot}; rendered: ${stamp}</metadata>`
     + h.svg + grid + bars + legend
-    + footer({ t, text: `Generated ${stamp}. Mined from 1,747 white-label branches; delisted apps verified against Internet Archive crawls.`, y: H - 12 })
+    + footer({ t, text: `Rendered ${stamp} from cv-siddharth/main/src/data/store.ts (snapshot ${snapshot}; ${stats.branches.toLocaleString("en-US")} branches).`, y: H - 12 })
     + close();
 }
 
@@ -83,17 +82,26 @@ try {
   const rows = [...seg.matchAll(/\{\s*"year":\s*(\d+),\s*"live":\s*(\d+),\s*"gone":\s*(\d+)\s*\}/g)]
     .map((m) => ({ year: +m[1], live: +m[2], gone: +m[3] }));
 
-  // A parse that returns nothing is the silent-empty-chart failure. Loud.
-  if (rows.length < 4) {
-    console.error(`[gen-fleet-chart] parsed only ${rows.length} year(s) from store.ts, refusing to write a near-empty chart.`);
-    console.error("  The lastShipped shape probably changed. Fix the pattern here rather than deleting this guard.");
-    process.exitCode = 1;
-  } else {
-    const stamp = new Date().toISOString().slice(0, 10);
-    for (const t of Object.values(THEMES)) writeFileSync(`assets/fleet-${t.name}.svg`, svg(rows, t, stamp));
-    const live = rows.reduce((a, r) => a + r.live, 0);
-    console.log(`[gen-fleet-chart] ${rows.length} years, ${live} live of ${rows.reduce((a, r) => a + r.live + r.gone, 0)}`);
+  const statsBody = text.match(/export const fleetStats = \{([^}]+)\} as const;/)?.[1];
+  const stat = (name) => {
+    const value = statsBody?.match(new RegExp(`"${name}":\\s*(\\d+)`))?.[1];
+    if (!value) throw new Error(`fleetStats.${name} missing from store.ts`);
+    return Number(value);
+  };
+  const stats = { live: stat("live"), delisted: stat("delisted"), clientsLive: stat("clientsLive"), branches: stat("branches") };
+  const snapshot = text.match(/export const storeGeneratedAt = "(\d{4}-\d{2}-\d{2})";/)?.[1];
+  if (!snapshot) throw new Error("storeGeneratedAt missing from store.ts");
+  if (rows.length < 4) throw new Error(`parsed only ${rows.length} year(s) from store.ts`);
+  const live = rows.reduce((a, r) => a + r.live, 0);
+  const delisted = rows.reduce((a, r) => a + r.gone, 0);
+  if (live !== stats.live || delisted !== stats.delisted) {
+    throw new Error(`lastShipped ${live}/${delisted} differs from fleetStats ${stats.live}/${stats.delisted}`);
   }
+
+  const stamp = new Date().toISOString().slice(0, 10);
+  for (const t of Object.values(THEMES)) writeFileSync(`assets/fleet-${t.name}.svg`, svg(rows, stats, snapshot, t, stamp));
+  console.log(`[gen-fleet-chart] ${rows.length} years, ${live} live of ${live + delisted}; Store snapshot ${snapshot}`);
 } catch (err) {
-  console.warn("[gen-fleet-chart] fetch failed, leaving the committed SVGs alone,", err.message);
+  console.error("[gen-fleet-chart] refresh failed; committed SVGs unchanged:", err.message);
+  process.exitCode = 1;
 }

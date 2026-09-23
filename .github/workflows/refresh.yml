@@ -139,9 +139,9 @@ jobs:
 
           Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-          A non-zero exit from one of these means a DEAD PATTERN, not a network blip: fetch failures are
-          swallowed on purpose and leave the committed files alone. So the prose was edited and a regex
-          stopped matching. Fix the pattern rather than removing the check."
+          A non-zero exit can mean a changed source shape, a source that disagrees with its own totals,
+          or a fetch failure. Check the failed generator's log before changing its guard; committed
+          outputs remain untouched when the fleet source cannot be verified."
 
           EXISTING=$(gh issue list --state open --label generator-failure --limit 1 --json number --jq '.[0].number // empty')
           if [ -n "$EXISTING" ]; then
