@@ -7,7 +7,7 @@
 
 At [Dice.tech](https://dice.tech/) I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
 
-[Portfolio](https://cv-siddharth.vercel.app) (also served at [siddharth-pandalai.vercel.app](https://siddharth-pandalai.vercel.app)) &nbsp;·&nbsp; [Interactive CV](https://cv-siddharth.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://cv-siddharth.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
+[Portfolio](https://siddharth-pandalai.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://siddharth-pandalai.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://siddharth-pandalai.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
 **80%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
 
@@ -44,7 +44,7 @@ That is why the board grades against a deadline rather than a pass or fail, and
 why it is published rather than kept in a dashboard only I look at.
 
 A separate board tracks cv-siddharth's own generated datasets against their
-SLA: [/ops](https://cv-siddharth.vercel.app/ops). The two are not merged; this
+SLA: [/ops](https://siddharth-pandalai.vercel.app/ops). The two are not merged; this
 board watches the account, that one watches the portfolio repo.
 
 </details>
@@ -76,7 +76,7 @@ status page that costs anything to be honest about.
 At Jugnoo I built the per-tenant flavour system, one build config and one set of
 resource overlays, that let a client app ship without forking the codebase. The
 interesting number is not the total, it is the shape: apps launched under that
-system are still being updated years later. [See the fleet](https://cv-siddharth.vercel.app/shipped),
+system are still being updated years later. [See the fleet](https://siddharth-pandalai.vercel.app/shipped),
 checked against the Play Store and Internet Archive crawls rather than memory.
 
 ## The KMP family
@@ -138,12 +138,12 @@ One platform, seen at different layers. Depth is behind the links.
 
 | Repo | What it is | Its number |
 |---|---|---|
-| [Doori](https://github.com/darkpandawarrior/Doori) | Mileage and trip tracking, offline-first, Ktor backend | 46 modules, 5 platforms |
-| [PaymentsLab-KMP](https://github.com/darkpandawarrior/PaymentsLab-KMP) | Every payment gateway behind one abstraction, each transaction's lifecycle visible | 40 modules |
+| [Doori](https://github.com/darkpandawarrior/Doori) | Mileage and trip tracking, offline-first, Ktor backend | 49 modules, 5 platforms |
+| [PaymentsLab-KMP](https://github.com/darkpandawarrior/PaymentsLab-KMP) | Every payment gateway behind one abstraction, each transaction's lifecycle visible | 46 modules |
 | [Gaddi](https://github.com/darkpandawarrior/Gaddi) | Bluffing card game, ISMCTS and LLM opponents on a byte-for-byte deterministic engine | Android, iOS, Desktop, Web |
 | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | test count gated, not hand-typed |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
-| **Candidai** [(case study)](https://cv-siddharth.vercel.app/project/candidai) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (87 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/career-ops-hq/career-ops) engine. Private while v1 lands | case study is public |
+| **Candidai** [(case study)](https://siddharth-pandalai.vercel.app/project/candidai) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (87 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/career-ops-hq/career-ops) engine. Private while v1 lands | case study is public |
 | [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
 
