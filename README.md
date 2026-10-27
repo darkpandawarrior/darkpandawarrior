@@ -9,7 +9,7 @@ At [Dice.tech](https://dice.tech/) I own the Android platform: ~964k lines, 772k
 
 [Portfolio](https://siddharth-pandalai.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://siddharth-pandalai.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://siddharth-pandalai.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
-**80%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
+**85%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
 
 </div>
 
@@ -125,7 +125,7 @@ One platform, seen at different layers. Depth is behind the links.
 
 | Lane | The proof | The number |
 |---|---|---|
-| **Android at scale** | Dice platform: GPS pipeline, Compose migration, crash and concurrency work, security hardening | 50k MAU, 80% fewer crashes |
+| **Android at scale** | Dice platform: GPS pipeline, Compose migration, crash and concurrency work, security hardening | 50k MAU, 85% fewer crashes |
 | **Platform ownership** | Jugnoo's white-label estate and the automation that shipped it | 173 apps on Play, 80% less delivery time |
 | **Libraries and build** | [kmp-toolkit](https://github.com/darkpandawarrior/kmp-toolkit), [kmp-build-logic](https://github.com/darkpandawarrior/kmp-build-logic), [kmp-app-template](https://github.com/darkpandawarrior/kmp-app-template) | 40 modules, 17 plugins |
 | **Tooling** | The generators that draw this page, and the guards that fail when their data ages | every figure machine-checked |
@@ -144,7 +144,7 @@ One platform, seen at different layers. Depth is behind the links.
 | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | test count gated, not hand-typed |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
 | **Candidai** [(case study)](https://siddharth-pandalai.vercel.app/project/candidai) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (87 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/career-ops-hq/career-ops) engine. Private while v1 lands | case study is public |
-| [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a linter that strips AI tells | 4 channels |
+| [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a style linter that flags em dashes and stock phrases before anything ships | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
 
 </details>
