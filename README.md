@@ -144,7 +144,7 @@ One platform, seen at different layers. Depth is behind the links.
 | [cv-siddharth](https://github.com/darkpandawarrior/cv-siddharth) | This portfolio: React 19, multi-provider LLM chat, and the generator farm behind every number | test count gated, not hand-typed |
 | [cv-siddharth-kmp](https://github.com/darkpandawarrior/cv-siddharth-kmp) | The same portfolio in one Kotlin `commonMain`, rendering to Wasm, Desktop, Android, iOS | near dependency-free |
 | **Candidai** [(case study)](https://siddharth-pandalai.vercel.app/project/candidai) | Local-first AI career-intelligence dashboard: resume onboarding, reverse-ATS discovery (87 providers), evidence-based fit scoring. Built on the open-source [career-ops](https://github.com/career-ops-hq/career-ops) engine. Private while v1 lands | case study is public |
-| [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms, with a style linter that flags em dashes and stock phrases before anything ships | 4 channels |
+| [The Loopdown](https://github.com/darkpandawarrior/the-loopdown) | One war story from a real project, adapted to four platforms | 4 channels |
 | [SINC-P](https://github.com/darkpandawarrior/SINC-P) | Statutory student grievance redressal, UGC 2023 compliant, with an SLA clock | compliance-cited |
 
 </details>
