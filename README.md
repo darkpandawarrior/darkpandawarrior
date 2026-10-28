@@ -5,11 +5,11 @@
   <img src="assets/hero-light.svg" alt="Siddharth Pandalai, Senior Android Engineer. Production work at Dice.tech, the Kotlin Multiplatform core extracted from it, the four apps that core carries, and what was published in the open." width="1000"/>
 </picture>
 
-At [Dice.tech](https://dice.tech/) I own the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
+At [Dice.tech](https://dice.tech/) I owned the Android platform: ~964k lines, 772k of them Kotlin, serving **50,000+ MAU** and **22,000+ DAU**.
 
 [Portfolio](https://siddharth-pandalai.vercel.app) &nbsp;·&nbsp; [Interactive CV](https://siddharth-pandalai.vercel.app/resume) &nbsp;·&nbsp; [Hire me](https://siddharth-pandalai.vercel.app/hire) &nbsp;·&nbsp; [LinkedIn](https://linkedin.com/in/siddharth-pandalai)
 
-**85%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, VAPT cleared
+**85%** crash reduction &nbsp;·&nbsp; GPS **50% to 95%** &nbsp;·&nbsp; **~87%** of the UI layer on Compose &nbsp;·&nbsp; AES-256 Keystore, SSL pinning across **9 domains**, built to VAPT readiness
 
 </div>
 
