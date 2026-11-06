@@ -165,10 +165,7 @@ Most of the rest are correctness fixes, each with a reproduction and a regressio
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/siddharth-pandalai)
-[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:siddharthpandalai990@gmail.com)
-[![Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@siddharthpandalai990)
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-F58025?style=for-the-badge&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/12678663/siddharth-pandalai)
+[LinkedIn](https://linkedin.com/in/siddharth-pandalai), [email](mailto:siddharthpandalai990@gmail.com), [Medium](https://medium.com/@siddharthpandalai990), [Stack Overflow](https://stackoverflow.com/users/12678663/siddharth-pandalai).
 
 ---
 
